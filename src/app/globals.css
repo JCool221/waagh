@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.main-content {
+    width: 100vw;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+:root{
+    --border: 1px solid black;
+    --inset: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    --radius: 5px
+}

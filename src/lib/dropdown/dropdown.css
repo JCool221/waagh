@@ -1,0 +1,40 @@
+.dropdown-button {
+    --color: #bbb5bd;
+    height: 2rem;
+    width: 5rem;
+    border-radius: 5px;
+    position: relative;
+    isolation: isolate;
+    transition: transform .2s   ease-in-out;
+  
+}
+
+.dropdown-button::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: var(--color);
+    inset: 0;
+    transform-origin: right;
+    scale: 0 1;
+    transition: scale 450ms;
+}
+
+.dropdown-button:hover::after,
+.dropdown-button:focus-visible::after{
+    transform-origin: left;
+    scale: 1 1;
+}
+
+.dropdown-button:active {
+    outline: 1px solid black;
+    scale: 95%;
+}
+
+.menu{
+    position: fixed;
+    right: 4rem;
+    backdrop-filter: blur(7px);
+    padding: 0 2rem;
+    border-radius: 15px;
+}

@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    font-size: x-large;
+    position: fixed;
+    top: 0;
+    height: 3.5rem;
+    padding: 1rem;
+    backdrop-filter: blur(7px);
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    z-index: 1;
+    /* width: 100vw; */
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.links {
+    display: flex;
+    
+}
