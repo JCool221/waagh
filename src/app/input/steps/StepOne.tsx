@@ -10,7 +10,7 @@ interface StepOneProps {
 export default function StepOne({ nextStep }: StepOneProps) {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        
+        localStorage.removeItem('unit')
         if (e.target instanceof HTMLFormElement) {
             const form = new FormData(e.target);
             const formData = Object.fromEntries(form.entries());
@@ -23,6 +23,7 @@ export default function StepOne({ nextStep }: StepOneProps) {
     };
 
  return (
+    // TODO: refactor this to be a menu
     <form className="form-inputs" onSubmit={handleSubmit}>
         <h1>Welcome to the new unit wizard</h1>
         <label htmlFor="faction">Select your faction</label>
