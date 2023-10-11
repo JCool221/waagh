@@ -34,7 +34,8 @@
 .menu{
     position: fixed;
     right: 4rem;
-    backdrop-filter: blur(7px);
+    /* backdrop-filter: blur(7px); */
+    background-color: white;
     padding: 0 2rem;
     border-radius: 15px;
 }

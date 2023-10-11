@@ -40,13 +40,10 @@ export default function Dropdown() {
         <div className="menu" ref={menuRef}>
             {isVisible && 
             <ul>
-                <li>
-                    <Link href="input">
-                        Input
-                    </Link>
-                    </li>
+                <li><Link href="input">Input</Link></li>
                 <li><Link href="/">Home</Link></li>
-                <li>item3</li>
+                <li><Link href="shop">Shop</Link></li>
+                <li><button onClick={()=> localStorage.removeItem('unit')}>Clear state</button></li>
             </ul>
             }
         </div>
