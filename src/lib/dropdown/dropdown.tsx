@@ -41,12 +41,9 @@ export default function Dropdown() {
             {isVisible && 
             <ul>
                 <li>
-                    <Link href="input">
-                        Input
-                    </Link>
-                    </li>
+                    <Link href="input">Input</Link></li>
                 <li><Link href="/">Home</Link></li>
-                <li>item3</li>
+                <li><Link href="shop">Shop</Link></li>
             </ul>
             }
         </div>

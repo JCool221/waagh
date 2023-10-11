@@ -1,17 +1,23 @@
 "use client";
 
 import "./input.css";
-import FormOne from "./form-one";
-import { handleFormData } from "./handleFormData";
 import { useDispatch } from "react-redux";
 import { setUnit } from "../redux/slices/unitDataSlice";
+import { FormEvent } from "react";
 
 export default function Input() {
   const dispatch = useDispatch()
-  const handleSubmit = async (e:HTMLFormElement)=> {
+  const handleSubmit = (e:FormEvent<HTMLFormElement>)=> {
     e.preventDefault();
-    const formData= handleSubmit(e)
-    dispatch(setUnit(formData))
+    if (e.target instanceof HTMLFormElement) {
+      const form = new FormData(e.target);
+      const formData = Object.fromEntries(form.entries());
+      console.log(formData)
+      // dispatch(setUnit(formData))
+      localStorage.setItem('unit', JSON.stringify(formData))
+    } else {
+      console.error('e is not a form element, why?')
+    }
   }
  
   return (

@@ -18,12 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+        <ReduxProvider>
       <body className={inter.className}>
         <Nav />
-        <ReduxProvider>
         {children}
-        </ReduxProvider>
         </body>
+        </ReduxProvider>
     </html>
   )
 }
