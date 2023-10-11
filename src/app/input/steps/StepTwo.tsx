@@ -3,7 +3,12 @@
 import "../input.css";
 import { FormEvent } from "react"
 
-export default function StepTwo() {
+interface StepTwoProps {
+  nextStep: () => void;
+  previousStep: () => void
+}
+
+export default function StepTwo({ nextStep, previousStep }: StepTwoProps) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -19,6 +24,7 @@ export default function StepTwo() {
 
         console.log(updatedUnitData);
         localStorage.setItem("unit", JSON.stringify(updatedUnitData));
+        nextStep();
       } else {
         console.error("e is not a form element, why?");
       }
@@ -26,6 +32,10 @@ export default function StepTwo() {
       console.error('no unit data found in storage')
     }
   };
+
+  const handleBack =()=> {
+    previousStep();
+  }
 
   return (
     <form className="form-inputs" onSubmit={handleSubmit}>
@@ -50,6 +60,7 @@ export default function StepTwo() {
         placeholder="enter points"
         required
       />
+      <button onClick={handleBack}>Back</button>
       <button type="submit">Submit</button>
     </form>
   );

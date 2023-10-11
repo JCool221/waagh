@@ -5,6 +5,7 @@ import { useState } from 'react'
 import "./input.css";
 import StepTwo from "./steps/StepTwo";
 import StepOne from './steps/StepOne';
+import StepThree from './steps/StepThree';
 
 export default function Input() {
   const [step, setStep] = useState(1)
@@ -22,6 +23,7 @@ export default function Input() {
     <div className="form-container">
         {step === 1 && <StepOne nextStep={nextStep} />}
         {step === 2 && <StepTwo nextStep={nextStep} previousStep={previousStep} />}
+        {step === 3 && <StepThree nextStep={nextStep} previousStep={previousStep} />}
 
     </div>
   );
