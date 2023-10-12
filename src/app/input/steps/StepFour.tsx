@@ -4,12 +4,12 @@ import "../input.css";
 import { FormEvent } from "react";
 import { useState, useRef } from 'react'
 
-interface StepThreeProps {
+interface StepFourProps {
   nextStep: () => void;
   previousStep: () => void;
 }
 
-export default function StepThree({ nextStep, previousStep }: StepThreeProps) {
+export default function StepFour({ nextStep, previousStep }: StepFourProps) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [submitButton, setSubmitButton] = useState<string | null>(null);
 
@@ -53,6 +53,7 @@ export default function StepThree({ nextStep, previousStep }: StepThreeProps) {
 
 
   return (
+    // for step four we will be refactoring step three for ranged weapons (and then 5 will be melee)
     <form className="form-inputs"  ref={formRef} onSubmit={handleSubmit}>
       <div className="att-form">
         <input
