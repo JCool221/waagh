@@ -1,0 +1,32 @@
+{
+    "factions": [
+        {
+            "adeptus astartes": [
+                {"faction":"space marines"},
+                {"faction":"black templars"},
+                {"faction": "blood angels"},
+                {"faction":"dark angels"},
+                {"faction":"deathwatch"},
+                {"faction":"imperial fists"},
+                {"faction": "iron hands"},
+                {"faction":"raven guard"},
+                {"faction":"salamanders"},
+                {"faction":"space wolves"},
+                {"faction":"ultramrines"},
+                {"faction":"white scars"}
+            ]
+        },{
+            "imperium": [
+                {"faction":"adeptus sororitas"}
+            ]
+        },{
+            "chaos":[
+                {"faction":"chaos space marines"}
+            ]
+        },{
+            "xenos":[
+                {"faction":"necrons"}
+            ]
+        }
+    ]
+}
