@@ -1,32 +1,53 @@
 {
-    "factions": [
-        {
-            "adeptus astartes": [
-                {"faction":"space marines"},
-                {"faction":"black templars"},
-                {"faction": "blood angels"},
-                {"faction":"dark angels"},
-                {"faction":"deathwatch"},
-                {"faction":"imperial fists"},
-                {"faction": "iron hands"},
-                {"faction":"raven guard"},
-                {"faction":"salamanders"},
-                {"faction":"space wolves"},
-                {"faction":"ultramrines"},
-                {"faction":"white scars"}
-            ]
-        },{
-            "imperium": [
-                {"faction":"adeptus sororitas"}
-            ]
-        },{
-            "chaos":[
-                {"faction":"chaos space marines"}
-            ]
-        },{
-            "xenos":[
-                {"faction":"necrons"}
-            ]
-        }
-    ]
+  "factions": [
+    {
+      "adeptus astartes": [
+        { "faction": "space marines", "id": "001" },
+        { "faction": "black templars", "id": "002" },
+        { "faction": "blood angels", "id": "003" },
+        { "faction": "dark angels", "id": "004" },
+        { "faction": "deathwatch", "id": "005" },
+        { "faction": "imperial fists", "id": "006" },
+        { "faction": "iron hands", "id": "007" },
+        { "faction": "raven guard", "id": "008" },
+        { "faction": "salamanders", "id": "009" },
+        { "faction": "space wolves", "id": "010" },
+        { "faction": "ultramrines", "id": "011" },
+        { "faction": "white scars", "id": "012" }
+      ]
+    },
+    {
+      "imperium": [
+        { "faction": "adeptus sororitas", "id": "101" },
+        { "faction": "adeptus custodes", "id": "102" },
+        { "faction": "adeptus mechanicus", "id": "103" },
+        { "faction": "astra militarum", "id": "104" },
+        { "faction": "grey knights", "id": "105" },
+        { "faction": "imperial agents", "id": "106" },
+        { "faction": "imperial knights", "id": "107" }
+      ]
+    },
+    {
+      "chaos": [
+        { "faction": "chaos space marines", "id": "201" },
+        { "faction": "chaos daemons", "id": "202" },
+        { "faction": "chaos knights", "id": "203" },
+        { "faction": "death guard", "id": "204" },
+        { "faction": "thousand sons", "id": "205" },
+        { "faction": "world eaters", "id": "206" }
+      ]
+    },
+    {
+      "xenos": [
+        { "faction": "necrons", "id": "301" },
+        { "faction": "aeldari", "id": "302" },
+        { "faction": "drukhari", "id": "303" },
+        { "faction": "genestealer cults", "id": "304" },
+        { "faction": "leagues of votann", "id": "305" },
+        { "faction": "orks", "id": "306" },
+        { "faction": "tyranids", "id": "307" },
+        { "faction": "t'au empire", "id": "308" }
+      ]
+    }
+  ]
 }
