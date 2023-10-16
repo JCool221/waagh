@@ -29,11 +29,7 @@ export default function StepOne({ nextStep }: StepOneProps) {
 
     const handleTopLevelFactionChange = (e: ChangeEvent<HTMLSelectElement>) => {
         const selectedFaction = e.target.value;
-    
-        // Update the selected top-level faction
         setSelectedTopLevelFaction(selectedFaction);
-    
-        // Retrieve and set the subfactions for the selected top-level faction
         const subfactionsForSelectedFaction = (data.factions as unknown as TopLevelFaction[]).find(
           (f) => Object.keys(f)[0] === selectedFaction
         ) as TopLevelFaction;
@@ -41,16 +37,12 @@ export default function StepOne({ nextStep }: StepOneProps) {
         if (subfactionsForSelectedFaction) {
           setSubFactions(subfactionsForSelectedFaction[selectedFaction]);
         } else {
-          // Handle if the selected faction is not found
           setSubFactions([]);
         }
-    
-        // Reset the selected subfaction
         setSelectedSubFaction('');
       };
     
       const handleSubFactionChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        // Update the selected subfaction
         setSelectedSubFaction(e.target.value);
       };
     
@@ -68,7 +60,7 @@ export default function StepOne({ nextStep }: StepOneProps) {
         onChange={handleTopLevelFactionChange}
         >
         <option value="" disabled>Select a faction</option>
-        {data.factions.map((faction: TopLevelFaction, index: number) => (
+        {(data.factions as unknown as TopLevelFaction[]).map((faction: TopLevelFaction, index: number) => (
           <option key={index} value={Object.keys(faction)[0]}>
             {Object.keys(faction)[0]}
           </option>
@@ -76,7 +68,7 @@ export default function StepOne({ nextStep }: StepOneProps) {
         </select>
 
         {selectedTopLevelFaction && (
-        <div>
+        <div className="subfaction">
           <label htmlFor="subFaction">Select your subfaction</label>
           <select
             name="subFaction"

@@ -64,3 +64,14 @@
     text-align: center;
     box-shadow: var(--inset);
 }
+
+.subfaction {
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
+}
