@@ -1,0 +1,72 @@
+{
+    "weapon":[
+        {"01":[
+            {
+                "name":"assault",
+                "description": "weapons with [ASSAULT] in their profile are known as Assault weapons.  If a unit that Advanced this turn contains any models equipped with Assault weapons, it is still eligible to shoot in this turn's Shooting phase.  When such a unit is selected to shoot, you can only resolve attacks using Assault weapons its models are equipped with",
+                "tooltip":"Can be shot even if the bearer's unit Advanced",
+                "extend":false,
+                "value":false
+            },
+            {
+                "name":"rapid fire",
+                "description": "Weapons with [RAPID FIRE X]  in their profile are known as Rapid Fire weapons.  Each time such a weapon targets a unit within half that weapon's range, the Attacks characteristic of that weapon is increased by the amount denoted by 'X'",
+                "tooltip": "[RAPID FIRE X]: increase the Attacks by 'X' when targeting units within half range",
+                "extend":false,
+                "value":true
+            },
+            {
+                "name":"ignores cover",
+                "description":"Weapons with [IGNORES COVER] in their profile are known as Ignores Cover weapons.  Each time an attack is made with such a weapon, the target cannot have the Benefit of Cover against that attack",
+                "tooltip":"The target cannot have the Benefit of Cover against attacks from this weapon",
+                "extend":false,
+                "value":false
+            },
+            {
+                "name":"twin-linked",
+                "description":"Weapons with [TWIN-LINKED] in their profile are known as Twin-Linked weapons.  Each time an attack is made with such a weapon, you can re-roll the that attack's Wound roll",
+                "tooltip":"You may re-roll the wound roll from this weapon",
+                "extend":false,
+                "value":false
+            },
+            {
+                "name":"pistol",
+                "description": "Weapons with [PISTOL] in their profile are known as Pistols.  If a unit contains any models wquipped with Pistols, that unit is eligible to shoot in its controlling player's Shootinf phase even while it is within Engagement Range of one or more enemy units.  When such a unit is selected to shoot, it can only resolve attacks usint its Pistols and can only target one of the enemy units it is within Engagement Range of.  In such circumstances, a Pistol can target an enemy unit even if other friendly units are within engagement Range of the same enemy unit.\nIf a model is equipped with one or more Pistols, unless it is a Monster or Vehicle model, it can either shoot with its Pistols or with all of its other ranged weapons.  Declare whether such a model will shoot with its Pistols or its other raned weapons before selecting targets.",
+                "tooltip":"Can be shot even if the bearer's unit is within Engagement Range of enemy units.\nCannot be shot alongside any other non-Pistol weapon (except by a Monster or Vehicle)",
+                "extend":false,
+                "value":false
+            },
+            {
+                "name":"torrent",
+                "description":"Weapons with [TORRENT] in their profile are known as Torrent weapons.  Each time an attack is made by such a weapon, that attack automatically hits the target",
+                "tooltip":"Each attack automatically hits the target",
+                "extend":false,
+                "value":false
+            },
+            {
+                "name":"lethal hits",
+                "description":"weapons with [LETHAL HITS] in their profile are known as Lethal Hits weapons.  Each time an attack is made with such a weapon, a Critical Hit automatically wounds the target",
+                "tooltip":"Critical hits automatically wound the target",
+                "extend":false,
+                "value":false
+            },
+            {
+                "name":"lance",
+                "description":"Weapons with [LANCE] in their profile are known as Lance weapons.  Each time an attack is made with such a weapon, if the bearer made a Charge move this turn, add 1 to that attack's Wound roll",
+                "tooltip":"add 1 to wound roll if bearer Charged",
+                "extend":false,
+                "value":false
+            },
+            {
+                "name":"indirect fire",
+                "description":"Weapons with [INDIRECT FIRE] in their profile are known as Indirect Fire weapons, and attacks can made with them even if the target is not visible to the attacking model. These attacks can destroy enemy models In a target unit even though none may have been visible to the attacking unit when you selected that target.\nIf no models in a target unit are visible to the attacking unit when you select that target, then each time a model in the attacking unit makes an attack against that target using an Indirect Fire weapon, subtract 1 from that attack's Hit roll and the target has the Benefit of Cover against that attack",
+                "tooltip":"Can target and make attacks against units that are not visible to the attacking unit\nIf no models are visible in a target unit when it is selected, then when making an attack against that target with an idirect Fire weapon, subtract 1 from that attack's Hit roll and the target has the Benefit of Cover against that attack",
+                "extend":false,
+                "value":false
+            },
+            {
+                
+            }
+        ]}
+    ]
+}
