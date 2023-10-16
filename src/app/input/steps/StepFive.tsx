@@ -24,10 +24,10 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
         const form = new FormData(e.target);
         const formData = Object.fromEntries(form.entries());
         
-        if (Array.isArray(existingUnitData.ranged)){
-          existingUnitData.ranged.push(formData)
+        if (Array.isArray(existingUnitData.melee)){
+          existingUnitData.melee.push(formData)
         } else {
-          existingUnitData.ranged = [formData]
+          existingUnitData.melee = [formData]
         }
 
         console.log(existingUnitData);
@@ -55,7 +55,7 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
   return (
     // for step four we will be refactoring step three for ranged weapons (and then 5 will be melee)
     <form className="form-inputs"  ref={formRef} onSubmit={handleSubmit}>
-      <h1>Ranged Weapons</h1>
+      <h1>Melee Weapons</h1>
       <p className="instructions">submit empty if none</p>
       <div className="att-form">
         <input
@@ -68,20 +68,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
         />
 
         <div className="attributes">
-          <div className="att-block">
-            <label className="att-label" htmlFor="range">
-              Range
-            </label>
-            <input
-              type="text"
-              name="range"
-              id="range"
-              pattern="[0-9]*"
-              className="att-values"
-              autoComplete="off"
-              required
-            />
-          </div>
 
           <div className="att-block">
             <label className="att-label" htmlFor="a">
@@ -99,13 +85,13 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
           </div>
 
           <div className="att-block">
-            <label className="att-label" htmlFor="bs">
-              BS
+            <label className="att-label" htmlFor="ws">
+              WS
             </label>
             <input
               type="text"
-              name="bs"
-              id="bs"
+              name="ws"
+              id="ws"
               pattern="[0-9]*"
               className="att-values"
               autoComplete="off"

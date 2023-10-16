@@ -6,6 +6,8 @@ import "./input.css";
 import StepTwo from "./steps/StepTwo";
 import StepOne from './steps/StepOne';
 import StepThree from './steps/StepThree';
+import StepFour from './steps/StepFour';
+import StepFive from './steps/StepFive'
 
 export default function Input() {
   const [step, setStep] = useState(1)
@@ -21,10 +23,13 @@ export default function Input() {
  
   return (
     <div className="form-container">
+      {/* <StepFive nextStep={nextStep} previousStep={previousStep}/> */}
         {step === 1 && <StepOne nextStep={nextStep} />}
         {step === 2 && <StepTwo nextStep={nextStep} previousStep={previousStep} />}
         {step === 3 && <StepThree nextStep={nextStep} previousStep={previousStep} />}
-
+        {step === 4 && <StepFour nextStep={nextStep} previousStep={previousStep} />}
+        {step === 5 && <StepFive nextStep={nextStep} previousStep={previousStep} />}
+{/* todo: invuln save, unit comp, wargear options, abilities, leader, keywords */}
     </div>
   );
 }
