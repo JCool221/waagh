@@ -1,7 +1,7 @@
 'use client'
 
 import "../input.css";
-import data from "../../../lib/factions.json"
+import data from "../../../lib/data/factions.json"
 import { FormEvent, ChangeEvent, useState } from 'react'
 import { Faction, FactionsData, TopLevelFaction } from '../../../lib/types/factions'
 
