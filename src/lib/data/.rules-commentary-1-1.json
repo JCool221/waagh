@@ -1,0 +1,222 @@
+[
+  {
+    "title": "Active Player",
+    "description": "The player whose turn is taking place is said to be the active player."
+  },
+  {
+    "title": "Adding Models to a Unit",
+    "description": "Some rules allow you to add models to a unit during the battle; such models must be set up in Unit Coherency with models in their unit that started that phase on the battlefield (i.e. models that were already on the battlefield when that rule was used). A model added to a unit during the battle can be set up within Engagement Range of one or more enemy units, but only if those enemy units are already within Engagement Range of the unit that model is being added to. When adding models to a unit as described above, any models that cannot be set up due to insufficient space are considered to have been destroyed, but do not trigger any rules that are triggered when a model is destroyed."
+  },
+  {
+    "title": "Additional Hits",
+    "description": "Some rules cause attacks to score additional hits on a Critical Hit (e.g. [SUSTAINED HITS]). If the attacking model is also benefiting from any other rules that trigger on a Critical Hit (e.g. [LETHAL HITS]), only the original attack benefits from those rules. Any additional hits scored as the result of a Critical Hit are automatically successful (see Automatically Successful)."
+  },
+  {
+    "title": "Affected by a Stratagem",
+    "description": "If a unit is selected as the target of a Stratagem, it is said to be affected by that Stratagem. If the Command Re-roll Stratagem is used to re-roll a dice roll made for a unit, a model in that unit or an attack made by a model in that unit, that unit is said to be affected by that Stratagem. If a unit cannot be affected by one of your Stratagems (e.g. because it is Battle-shocked), you cannot target it with the Command Re-roll Stratagem or any of your other Stratagems. Note that the New Orders Stratagem targets an active Secondary Mission card rather than any units, so can always be used (assuming you have the CP to do so) even if all units from your army are Battle-shocked."
+  },
+  {
+    "title": "Against (an attack)",
+    "description": "When making an attack, if a saving throw is made, that saving throw is said to be made against that attack."
+  },
+  {
+    "title": "Against (an attack with an ‘X’ characteristic of ‘Y’)",
+    "description": "Some rules only apply against an attack with a specific characteristic. If the characteristic involved is AP or Damage, such rules are applied at the Allocate Attack step of the attack sequence (e.g. ‘Each time an attack with a Damage characteristic of 1 is allocated to a model in this unit, add 1 to any armour saving throw made against that attack’). Otherwise, they are applied at the start of the attack sequence."
+  },
+  {
+    "title": "All Models (in this unit can each have their Weapon A replaced with 1 Weapon B)",
+    "description": "When this wargear option is selected for a unit, every model in that unit equipped with Weapon A must replace it with Weapon B. It is not possible for only some of those models to replace that weapon and for others not to."
+  },
+  {
+    "title": "Any Number of Models (can each have their Weapon A replaced with 1 Weapon B)",
+    "description": "When this wargear option is selected for a unit, any number of models in that unit equipped with Weapon A can each replace it with Weapon B. It is possible for only some of those models to replace that weapon and for others not to."
+  },
+  {
+    "title": "Any",
+    "description": "If a rule applies to ‘any’, it means ‘one or more’. For example, ‘While this model is within Engagement Range of any enemy units’ is the same as ‘While this model is within Engagement Range of one or more enemy units’."
+  },
+  {
+    "title": "Army",
+    "description": "A player’s army consists of every unit on their Army Roster and any units that are added to it over the course of the battle."
+  },
+  {
+    "title": "Arriving as Reinforcements/from Strategic Reserves",
+    "description": "When a Reinforcements/Strategic Reserves unit is set up on the battlefield (other than when disembarking from a Transport), it is said to have arrived as Reinforcements/from Strategic Reserves."
+  },
+  {
+    "title": "As Close as Possible",
+    "description": "If a rule instructs you to move a model ‘as close as possible’ to a unit, model or objective marker, you must end that model’s move in base-to-base contact with that unit, model or objective marker if its move is sufficient to do so without breaking any other restrictions (such as Unit Coherency), or as close as you can achieve if its move is not sufficient. If a model is already as close as possible to a unit, model or objective marker when it is instructed to make a move as close as possible towards a unit, model or objective marker, that model cannot be moved, but still counts as having made the move in question."
+  },
+  {
+    "title": "Attached Units with Multiple Characters (allocating attacks)",
+    "description": "Some units can have more than one Leader unit attached to them, and so can contain more than one Character model. Each time an attack with the [PRECISION] ability successfully wounds such a unit, the attacking model’s controlling player can choose to have that attack allocated to any visible Character model in that unit, rather than following the normal attack sequence. In such cases, allocate all [PRECISION] attacks that successfully wound before any saving throws are made."
+  },
+  {
+    "title": "Attached Units with Multiple Characters (no more than two)",
+    "description": "Some models have rules that allow them to be attached to a specified unit even if another specified Character is already attached to that unit (e.g. Lieutenant models attaching to units already led by a Captain or Chapter Master). In all such cases, only one additional model with rules to this effect can be added to a unit already led by a different Character."
+  },
+  {
+    "title": "Attack’s Characteristics",
+    "description": "When making an attack, that attack is considered to have the same characteristics and abilities as the weapon making that attack. If any modifiers apply to the characteristics or abilities of an attack, those changes do not apply to the weapon it is made with, nor do they apply to any other attacks made with that weapon."
+  },
+  {
+    "title": "Automatically Hits",
+    "description": "If an attack automatically hits, the Hit roll for that attack is automatically successful (see Automatically Successful)."
+  },
+  {
+    "title": "Automatically Passes",
+    "description": "See Automatically Successful."
+  },
+  {
+    "title": "AUTOMATICALLY SUCCESSFUL",
+    "description": "When a dice roll is automatically successful, the following applies:\n■ If a roll is automatically successful, do not roll the dice. Any rules that take effect on a particular dice result or roll result do not take effect if the roll they refer to is automatically successful.\n■ If a Hit roll is automatically successful, move straight to the Wound roll. Such a Hit roll is not a Critical Hit, and does not trigger any effects that are triggered by a Critical Hit.\n■ If a Wound roll is automatically successful, move straight to the allocation of that attack. Such a Wound roll is not a Critical Wound, and does not trigger any effects that are triggered by a Critical Wound."
+  },
+  {
+    "title": "Automatically Wounds",
+    "description": "If an attack automatically wounds, the Wound roll for that attack is automatically successful (see Automatically Successful)."
+  },
+  {
+    "title": "Base",
+    "description": "Most models are mounted on a base. A model’s base is always considered to be part of the model."
+  },
+  {
+    "title": "Base-to-Base Contact",
+    "description": "When two models’ bases are touching, they are in base-to-base contact and are as close as possible (see As Close as Possible). Some models are so large they overhang their base and so it is not physically possible for their bases to touch those of other models. In such cases, you should measure to or from the base (or hull) of such a model – whichever is closer – and when such a model is as close as possible to another model, those models are considered to be in base-to-base contact."
+  },
+  {
+    "title": "Battleline if…",
+    "description": "Some rules grant the Battleline keyword to additional units from your army – typically if you select a particular Detachment or if your Warlord is a specific model. When mustering your army, treat such units as Battleline units for the purposes of the Select Units step, even though the Select Warlord step comes afterwards."
+  },
+  {
+    "title": "Battlefield Edge",
+    "description": "The battlefield is bordered by four battlefield edges."
+  },
+  {
+    "title": "Battlefield Quarter",
+    "description": "See Table Quarter."
+  },
+  {
+    "title": "Battle-shock Tests",
+    "description": "2D6 roll required by each unit in your army that is Below Half-strength in your Command phase (Core Rules, page 11). If the result is less than the unit’s Leadership characteristic, then until the start of your next Command phase, that unit is Battle-shocked. Some rules require a unit to take a Battle-shock test during a phase other than the Command phase, and even when not Below Half-strength. Units that are already Battle-shocked must still take another Battle-shock test in such cases, in case the result triggers any additional effects, but passing or failing that test does not change that unit’s Battle-shocked status (i.e. a pass will not result in that unit no longer being Battle-shocked, and a failure will not result in that unit being Battle-shocked for any longer duration). Regardless of when a unit from your army becomes Battle-shocked, it remains so only until the start of your next Command phase."
+  },
+  {
+    "title": "Bearer",
+    "description": "The bearer of a weapon, Enhancement or item of wargear is the model equipped with it."
+  },
+  {
+    "title": "Below Starting Strength (with a Starting Strength of 1)",
+    "description": "If the number of remaining models in a unit is less than that unit’s Starting Strength, that unit is said to be Below its Starting Strength. If a unit has a Starting Strength of 1, while that model has less than its starting number of wounds remaining, it is said to be Below its Starting Strength."
+  },
+  {
+    "title": "Benefit of Cover (when not within terrain)",
+    "description": "Some rules state that a model or unit has the Benefit of Cover even when not within terrain. Such rules apply irrespective of any terrain features that model or unit may be within or behind. Similarly, if a rule only applies while a unit has the Benefit of Cover, that rule will apply to any model or unit under the effects of any rule that gives it the Benefit of Cover (even when not within terrain)."
+  },
+  {
+    "title": "Best",
+    "description": "When determining the ‘best’ characteristic in a unit, compare the values of all the specified characteristics of all the models or weapons in that unit. The best characteristic is the value that all others are either worse than or equal to (see Or Better)."
+  },
+
+  {
+    "title": "Big Guns Never Tire (Blast weapons and Pistols)",
+    "description": "Monster and Vehicle units can shoot, and be shot at, even while they are Locked in Combat (Core Rules, page 20)."
+  },
+  {
+    "title": "CHARGING",
+    "description": "■ Charge Move: Move made in the Charge phase as part of a successful charge.\n■ Charge Distance: The result of a Charge roll is the maximum number of inches each model in a charging unit can move when making its Charge move. This is sometimes referred to as the charge distance.\n■ Declaring a Charge: When a player declares a charge with a unit, that unit is said to be declaring a charge.\n■ Charging Unit: A unit that has declared a charge is a charging unit.\n■ Charging Over Terrain Features with Flying Models: See Moving Over Terrain Features When Flying.\n■ Has Charged: If a unit makes a Charge move in a turn, until the end of that turn, that unit, and every model in it, is said to have charged.\n■ Has Been Charged: If a unit was the target of a successful charge during a turn, until the end of that turn, that unit, and every model in it, is said to have been charged."
+  },
+  {
+    "title": "Closest Model/Unit",
+    "description": "When a rule refers to the closest model/unit, this is the closest model/unit to the model/unit using that rule. If two or more are equally close, the controlling player of the model/unit using that rule selects which is the closest for the purposes of that rule."
+  },
+  {
+    "title": "Critical Hit",
+    "description": "A Critical Hit is scored when a player rolls an unmodified Hit roll of 6 for an attack. Critical Hits are always successful Hit rolls, and can also trigger additional effects as described in certain rules (such effects are often said to be triggered ‘on a Critical Hit’, meaning when a Critical Hit is scored). While resolving attacks using the Fire Overwatch Stratagem, Critical Hits are only ever scored on unmodified Hit rolls of 6."
+  },
+  {
+    "title": "Critical Wound",
+    "description": "A Critical Wound is scored when a player rolls an unmodified Wound roll of 6 for an attack. Critical Wounds are always successful Wound rolls, and can also trigger additional effects as described in certain rules (such effects are often said to be triggered ‘on a Critical Wound’, meaning when a Critical Wound is scored)."
+  },
+  {
+    "title": "Considered to Be (dice roll)",
+    "description": "See Treated As (dice roll)."
+  },
+  {
+    "title": "DUPLICATED CORE ABILITIES",
+    "description": "The Core Rules describe dozens of abilities, including weapon abilities and deployment abilities. These are referred to as Core abilities, and most models, units, weapons or attacks either have one or more of them innately, or can gain them during the battle through other means such as Stratagems, Enhancements or attached Leaders. Regardless of the source, if a model, unit, weapon or attack has multiple instances of the same Core ability, those abilities are not cumulative, and only one instance of that ability can take effect at any one time."
+  },
+  {
+    "title": "Eligible Target (no longer eligible)",
+    "description": "If a unit that was an eligible target of an attack or charge when it was selected stops being an eligible target for that attack or charge (for example, because a rule enables it to make an out-of-phase move that takes it out of range), the attacking or charging unit can select new targets for those attacks or that charge. See Just After."
+  },
+  {
+    "title": "Fly",
+    "description": "If a unit’s datasheet has the Fly keyword, that unit is said to be able to Fly. When it makes a Normal, Advance or Fall Back move, its models can be moved over enemy models as if they were not there. Note this also means that Monster and Vehicle models that can Fly can be moved over other Monster and Vehicle models when making such a move."
+  },
+  {
+    "title": "Ground Level",
+    "description": "Some rules refer to models being at ‘ground level’ for the purposes of being targeted (e.g. Plunging Fire) or for determining whether models can be set up on higher levels of terrain features."
+  },
+  {
+    "title": "Highest Dice Result",
+    "description": "If a rule refers to the highest dice result and a dice roll involves multiple dice, if more than one of those dice have the same value, and that value is the highest, the active player must select one of those dice to be the highest dice result."
+  },
+  {
+    "title": "Horizontal/Vertical Distances",
+    "description": "Some rules state that the distance involved should be measured horizontally or vertically. When resolving such rules, do not measure ‘diagonally’."
+  },
+  {
+    "title": "KEYWORDS",
+    "description": "■ If a rule specifies that it applies to a model/unit with a Keyword, it only applies to a model/unit with that keyword on its datasheet.\n■ If a rule specifies that it applies to ‘non-Keyword’ models/units, it only applies to models/units that do not have that keyword. For example, if a rule applies to non-Vehicle units, it only applies to units that do not have the Vehicle keyword.\n■ Some units can contain models that have different keywords. While this is the case, such a unit is considered to have all of the keywords of all of its models, and so is affected by any rule that applies to units with any of those keywords. Remember that attacks are made against units, not models."
+  },
+  {
+    "title": "Leadership Test",
+    "description": "Roll 2D6 and if the total is greater than or equal to the best Leadership characteristic in that unit, the test is passed. Otherwise, the test is failed."
+  },
+  {
+    "title": "Lethal Hits (and Devastating Wounds)",
+    "description": "See Automatically Wounds."
+  },
+  {
+    "title": "Lethal Hits (and Sustained Hits)",
+    "description": "See Additional Hits."
+  },
+  {
+    "title": "Level of Control",
+    "description": "A player’s Level of Control over an objective marker is determined by summing the Objective Control characteristics of all of their models that are within range of it."
+  },
+  {
+    "title": "Locked in Combat",
+    "description": "While a unit is within Engagement Range of one or more enemy units, it is said to be Locked in Combat. Units that are Locked in Combat are not eligible to shoot and cannot be selected as the target of a ranged attack. Monster and Vehicle units are exceptions to this (see Big Guns Never Tire)."
+  },
+  {
+    "title": "Lowest Dice Result",
+    "description": "If a rule refers to the lowest dice result and a dice roll involves multiple dice, if more than one of those dice have the same value, and that value is the lowest, the active player must select one of those dice to be the lowest dice result."
+  },
+  {
+    "title": "Minimum Move",
+    "description": "Aircraft models have a move characteristic of 20+. This is the minimum distance the model must move in its Movement phase, and all parts of the model’s base must end the move at least this far away from where they started."
+  },
+  {
+    "title": "Model’s/Unit’s Phase",
+    "description": "When a rule refers to a model’s/unit’s phase (e.g. ‘this model’s Command phase’), it refers to the relevant phase of that model’s/unit’s controlling player."
+  },
+  {
+    "title": "Mortal Wounds",
+    "description": "Saving throws (of any kind) cannot be made against damage inflicted by mortal wounds, although rules that allow models to ignore wounds (e.g. Feel No Pain) can be used. Mortal wounds are applied one at a time and are not lost if a model in the target unit is destroyed – continue to apply them until they are all resolved or the target unit is destroyed. If an attacking unit inflicts a mixture of mortal wounds and normal damage, resolve all of the attacking unit’s normal damage first."
+  },
+  {
+    "title": "Moving Over Models",
+    "description": "Some models have a rule that enables them to ‘move over models,’ or ‘move over models as if they were not there’ when making a move. When moving a model with such a rule, it can be moved within Engagement Range of enemy models, but it cannot end a move on top of another model, it cannot end a Normal, Advance or Fall Back move within Engagement Range of any enemy models, and it can only end a Charge move within Engagement Range of units it declared a charge against that phase."
+  },
+  {
+    "title": "Moving Over Terrain Features When Flying",
+    "description": "Models that can Fly can move over intervening terrain features when making a Normal, Advance, Fall Back, or Charge move. When doing so, you must measure the path through the air."
+  },
+  {
+    "title": "One Shot",
+    "description": "If a model is equipped with more than one of the same weapon with the [ONE SHOT] ability (e.g. 2 hunter-killer missiles), that model can shoot with each of those weapons once per battle."
+  },
+  {
+    "_comment": "up to page 8 or so, page 9 is all diagrams and then GPT started struggling, will need to validate this to verify all text is included"
+  }
+]

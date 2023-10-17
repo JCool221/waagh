@@ -1,0 +1,9 @@
+.ability-container{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    flex-direction: column;
+}
