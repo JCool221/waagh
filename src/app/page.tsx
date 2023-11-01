@@ -1,9 +1,10 @@
-import Abilities from "@/lib/abilities/Abilities"
+import './input/input.css'
 
 export default function Home() {
+
   return (
     <main>
-      <Abilities/>
+        <div className="form-container">Lets Go!</div>
     </main>
   )
 }
