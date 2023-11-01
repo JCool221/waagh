@@ -1,20 +1,45 @@
 'use client'
 
-import { useState, ChangeEvent } from 'react'
+import { ChangeEvent, Dispatch, SetStateAction } from 'react'
 import "./abilities.css"
 import data from "../data/abilities.json"
 import AbiltitiesList from './list'
 
-export default function Abilities() {
-    const [abilities, setAbilities] = useState<string[]>([])
+interface AbilitiesProps {
+    abilities: string[];
+    setAbilities: Dispatch<SetStateAction<string[]>>;
+  }
+  
+
+export default function Abilities({ abilities, setAbilities }: AbilitiesProps) {
     
     const handleAbilities = (e: ChangeEvent<HTMLSelectElement>) => {
-        const selectedAbility = e.target.value;
-        console.log(selectedAbility)
+        let selectedAbility = e.target.value;
+        const selectedAbiltiyObject = data.weapon.find(ability => ability.name === selectedAbility)
+
+        if (selectedAbiltiyObject && selectedAbiltiyObject.extend === true) {
+            const extendInput = window.prompt('Please enter a keyword:')
+            if (extendInput !== null) {
+                selectedAbility += '-'+extendInput;
+            } else {
+                console.log('input canceled')
+                return
+            }
+        }
+
+        if (selectedAbiltiyObject && selectedAbiltiyObject.value === true) {
+            const valueInput = window.prompt('Please enter a value:')
+            if (valueInput !== null) {
+                selectedAbility += ' '+valueInput;
+            } else {
+                console.log('input canceled')
+                return
+            }
+        }
+
         if (!abilities.includes(selectedAbility)) {
             setAbilities((prevAbilities) => [...prevAbilities, selectedAbility]);
         }
-        console.log(abilities)
     }
 
     const handleClear = () => {
@@ -28,12 +53,13 @@ export default function Abilities() {
             id="abilities"
             onChange={handleAbilities}
             >
+                <option selected disabled value="">--Select any ability keywords</option>
         {data.weapon.map((ability, index) => (
             <option key={index}>{ability.name}</option>
             ))}
             </select>
             <AbiltitiesList abilities={abilities}/>
-            <button onClick={handleClear}>Clear</button>
+            <button className='ability-button' onClick={handleClear}>Clear</button>
         </div>
     )
 }

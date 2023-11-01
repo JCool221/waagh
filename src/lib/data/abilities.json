@@ -125,6 +125,13 @@
       "tooltip": "[ANTI-KEYWORD X+]: An unmodified Wound roll of ‘x+’ against a target with the matching keyword scores a Critical Wound",
       "extend": true,
       "value": true
+    },
+    {
+      "name":"psychic",
+      "description": "weapons with [PSYCHIC] are known as Psychic weapons.  If a Psychic weapon or ability causes any unit to suffer one or more wounds, each of those wounds is considered to have been inflicted by a Psychic Attack.",
+      "tooltip": "weapons with [PSYCHIC] are known as Psychic weapons.  If a Psychic weapon or ability causes any unit to suffer one or more wounds, each of those wounds is considered to have been inflicted by a Psychic Attack",
+      "extend":false,
+      "value":false
     }
   ],
   "unit": [

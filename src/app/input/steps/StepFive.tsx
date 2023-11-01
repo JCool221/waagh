@@ -3,6 +3,7 @@
 import "../input.css";
 import { FormEvent } from "react";
 import { useState, useRef } from 'react'
+import Abilities from "@/lib/abilities/Abilities";
 
 interface StepFourProps {
   nextStep: () => void;
@@ -12,6 +13,8 @@ interface StepFourProps {
 export default function StepFour({ nextStep, previousStep }: StepFourProps) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [submitButton, setSubmitButton] = useState<string | null>(null);
+
+  const [abilities, setAbilities] = useState<string[]>([])
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +26,9 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
       if (e.target instanceof HTMLFormElement) {
         const form = new FormData(e.target);
         const formData = Object.fromEntries(form.entries());
+
+        const abilitiesString = abilities.join(',')
+        formData.abilities = abilitiesString
         
         if (Array.isArray(existingUnitData.melee)){
           existingUnitData.melee.push(formData)
@@ -77,7 +83,7 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="a"
               id="a"
-              pattern="[0-9]*"
+              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -92,7 +98,7 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="ws"
               id="ws"
-              pattern="[0-9]*"
+              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -107,7 +113,7 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="s"
               id="s"
-              pattern="[0-9]*"
+              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -122,7 +128,7 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="ap"
               id="ap"
-              pattern="[0-9]*"
+              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -137,13 +143,14 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="d"
               id="d"
-              pattern="[0-9]*"
+              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
             />
           </div>
         </div>
+        <Abilities abilities={abilities} setAbilities={setAbilities}/>
       </div>
       <button onClick={handleBack}>Back</button>
       <button 

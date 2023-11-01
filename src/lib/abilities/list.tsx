@@ -7,8 +7,8 @@ interface AbilitiesListProps {
 export default function AbiltitiesList({ abilities }: AbilitiesListProps) {
     console.log("list:", abilities)
   return (
-    <div>
-      <h2>selected abilites</h2>
+    <div className="ability-list">
+      <h2 className="ability-header">Selected Abilites</h2>
       <ul>
         {abilities.map((ability: string, index: number) => (
           <li key={index}>{ability}</li>

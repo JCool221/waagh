@@ -1,9 +1,28 @@
 .ability-container{
     display: flex;
-    height: 100vh;
-    width: 100vw;
     justify-content: center;
     align-items: center;
     font-size: x-large;
     flex-direction: column;
+    /* border: 2px black solid;
+    width: fit-content; */
+    margin-top: 1rem;
+    padding: 1rem;
+    /* border-radius: 5%; */
+}
+
+.ability-list{
+    position: absolute;
+    right: 10rem;
+    top: 20rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.ability-header {
+    text-decoration: underline;
+}
+
+.ability-button {
+    margin-top: 1rem;
 }
