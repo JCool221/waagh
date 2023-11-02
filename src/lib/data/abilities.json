@@ -22,6 +22,13 @@
       "value": false
     },
     {
+        "name": "one shot",
+        "description": "Weapons with [ONE SHOT] in their profile count as One Shot weapons.  The bearer can only shoot with this weapon once per battle.",
+        "tooltip": "The bearer can only shoot with this weapon once per battle.",
+        "extend": false,
+        "value":false
+    },
+    {
       "name": "twin-linked",
       "description": "Weapons with [TWIN-LINKED] in their profile are known as Twin-Linked weapons.  Each time an attack is made with such a weapon, you can re-roll the that attack's Wound roll",
       "tooltip": "You may re-roll the wound roll from this weapon",
