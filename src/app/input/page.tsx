@@ -12,6 +12,7 @@ import StepSix from './steps/StepSix';
 
 export default function Input() {
   const [step, setStep] = useState(1)
+  const [unitData, setUnitData] = useState()
 
   const nextStep = () => {
     setStep(step + 1)
@@ -24,8 +25,7 @@ export default function Input() {
  
   return (
     <div className="form-container">
-      {/* <StepFive nextStep={nextStep} previousStep={previousStep}/> */}
-        {step === 1 && <StepOne nextStep={nextStep} />}
+        {step === 1 && <StepOne nextStep={nextStep} unitData={unitData} setUnitData={setUnitData}/>}
         {step === 2 && <StepTwo nextStep={nextStep} previousStep={previousStep} />}
         {step === 3 && <StepThree nextStep={nextStep} previousStep={previousStep} />}
         {step === 4 && <StepFour nextStep={nextStep} previousStep={previousStep} />}
