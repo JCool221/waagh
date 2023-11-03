@@ -40,6 +40,7 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
         localStorage.setItem("unit", JSON.stringify(existingUnitData));
 
         if(submitButton === 'addAnother') {
+          setAbilities([])
           formRef.current?.reset()
         } else if (submitButton === 'continue') {
           nextStep()
