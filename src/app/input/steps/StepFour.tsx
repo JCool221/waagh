@@ -83,7 +83,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="range"
               id="range"
-              pattern="[0-9]*"
               className="att-values"
               autoComplete="off"
               required
@@ -98,7 +97,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="a"
               id="a"
-              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -113,7 +111,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="bs"
               id="bs"
-              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -128,7 +125,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="s"
               id="s"
-              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -143,7 +139,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="ap"
               id="ap"
-              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -158,7 +153,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="d"
               id="d"
-              pattern="^[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required

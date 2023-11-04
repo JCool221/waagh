@@ -20,9 +20,9 @@ export default function StepOne({ nextStep, unitData, setUnitData }: Props) {
         if (e.target instanceof HTMLFormElement) {
             const form = new FormData(e.target);
             const formData = Object.fromEntries(form.entries());
-            // console.log(formData);
-            setUnitData(JSON.stringify(formData))
-            console.log(unitData)
+            console.log(formData);
+            // setUnitData(JSON.stringify(formData))
+            // console.log(unitData)
             localStorage.setItem("unit", JSON.stringify(formData));
             nextStep();
         } else {

@@ -53,7 +53,7 @@ export default function Abilities({ abilities, setAbilities }: AbilitiesProps) {
             id="abilities"
             onChange={handleAbilities}
             >
-                <option selected disabled value="">--Select any ability keywords</option>
+                <option disabled value="">--Select any ability keywords</option>
         {data.weapon.map((ability, index) => (
             <option key={index}>{ability.name}</option>
             ))}
