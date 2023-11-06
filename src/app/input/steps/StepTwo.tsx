@@ -2,28 +2,22 @@
 
 import "../input.css";
 import { FormEvent } from "react"
+import { Props } from "@/lib/types/props";
 
-interface StepTwoProps {
-  nextStep: () => void;
-  previousStep: () => void
-}
-
-export default function StepTwo({ nextStep, previousStep }: StepTwoProps) {
+export default function StepTwo({ nextStep, previousStep, unitData, setUnitData }: Props) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const existingData = localStorage.getItem('unit');
+    const existingData = unitData;
 
     if(existingData){
-      const existingUnitData = JSON.parse(existingData)
       if (e.target instanceof HTMLFormElement) {
         const form = new FormData(e.target);
         const formData = Object.fromEntries(form.entries());
 
-        const updatedUnitData = {...existingUnitData, ...formData}
+        const updatedUnitData = {...unitData, ...formData}
 
-        console.log(updatedUnitData);
-        localStorage.setItem("unit", JSON.stringify(updatedUnitData));
+        setUnitData(updatedUnitData)
         nextStep();
       } else {
         console.error("e is not a form element, why?");

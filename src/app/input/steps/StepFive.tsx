@@ -4,13 +4,9 @@ import "../input.css";
 import { FormEvent } from "react";
 import { useState, useRef } from 'react'
 import Abilities from "@/lib/abilities/Abilities";
+import { Props } from "@/lib/types/props";
 
-interface StepFourProps {
-  nextStep: () => void;
-  previousStep: () => void;
-}
-
-export default function StepFour({ nextStep, previousStep }: StepFourProps) {
+export default function StepFour({ nextStep, previousStep, unitData, setUnitData }: Props) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [submitButton, setSubmitButton] = useState<string | null>(null);
 
@@ -19,10 +15,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const existingData = localStorage.getItem('unit');
-
-    if(existingData){
-      const existingUnitData = JSON.parse(existingData)
       if (e.target instanceof HTMLFormElement) {
         const form = new FormData(e.target);
         const formData = Object.fromEntries(form.entries());
@@ -30,14 +22,13 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
         const abilitiesString = abilities.join(',')
         formData.abilities = abilitiesString
         
-        if (Array.isArray(existingUnitData.melee)){
-          existingUnitData.melee.push(formData)
+        if (Array.isArray(unitData.melee)){
+          unitData.melee.push(formData)
         } else {
-          existingUnitData.melee = [formData]
+          unitData.melee = [formData]
         }
 
-        console.log(existingUnitData);
-        localStorage.setItem("unit", JSON.stringify(existingUnitData));
+        setUnitData(unitData)
 
         if(submitButton === 'addAnother') {
           formRef.current?.reset()
@@ -48,9 +39,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
       } else {
         console.error("e is not a form element, why?");
       }
-    } else {
-      console.error('no unit data found in storage')
-    }
   };
 
   const handleBack =()=> {
