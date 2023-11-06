@@ -1,5 +1,5 @@
 export interface Props {
-    previousStep?: ()=>void,
+    previousStep: ()=>void,
     nextStep: ()=>void,
     unitData: any,
     setUnitData: React.Dispatch<React.SetStateAction<any>>,

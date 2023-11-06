@@ -2,65 +2,57 @@
 
 import "../input.css";
 import { FormEvent } from "react";
-import { useState, useRef } from 'react'
+import { useState, useRef } from "react";
 import Abilities from "@/lib/abilities/Abilities";
+import { Props } from "@/lib/types/props";
 
-interface StepFourProps {
-  nextStep: () => void;
-  previousStep: () => void;
-}
-
-export default function StepFour({ nextStep, previousStep }: StepFourProps) {
+export default function StepFour({
+  nextStep,
+  previousStep,
+  unitData,
+  setUnitData,
+}: Props) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [submitButton, setSubmitButton] = useState<string | null>(null);
 
-  const [abilities, setAbilities] = useState<string[]>([])
+  const [abilities, setAbilities] = useState<string[]>([]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const existingData = localStorage.getItem('unit');
+    if (e.target instanceof HTMLFormElement) {
+      const form = new FormData(e.target);
+      const formData = Object.fromEntries(form.entries());
 
-    if(existingData){
-      const existingUnitData = JSON.parse(existingData)
-      if (e.target instanceof HTMLFormElement) {
-        const form = new FormData(e.target);
-        const formData = Object.fromEntries(form.entries());
+      const abilitiesString = abilities.join(",");
+      formData.abilities = abilitiesString;
 
-        const abilitiesString = abilities.join(',')
-        formData.abilities = abilitiesString
-        
-        if (Array.isArray(existingUnitData.ranged)){
-          existingUnitData.ranged.push(formData)
-        } else {
-          existingUnitData.ranged = [formData]
-        }
-
-        console.log(existingUnitData);
-        localStorage.setItem("unit", JSON.stringify(existingUnitData));
-
-        if(submitButton === 'addAnother') {
-          formRef.current?.reset()
-        } else if (submitButton === 'continue') {
-          nextStep()
-        }
-
+      if (Array.isArray(unitData.ranged)) {
+        unitData.ranged.push(formData);
       } else {
-        console.error("e is not a form element, why?");
+        unitData.ranged = [formData];
+      }
+
+      setUnitData(unitData);
+
+      if (submitButton === "addAnother") {
+        setAbilities([]);
+        formRef.current?.reset();
+      } else if (submitButton === "continue") {
+        nextStep();
       }
     } else {
-      console.error('no unit data found in storage')
+      console.error("e is not a form element, why?");
     }
   };
 
-  const handleBack =()=> {
+  const handleBack = () => {
     previousStep();
-  }
-
+  };
 
   return (
     // for step four we will be refactoring step three for ranged weapons (and then 5 will be melee)
-    <form className="form-inputs"  ref={formRef} onSubmit={handleSubmit}>
+    <form className="form-inputs" ref={formRef} onSubmit={handleSubmit}>
       <h1>Ranged Weapons</h1>
       <p className="instructions">submit empty if none</p>
       <div className="att-form">
@@ -69,7 +61,7 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
           id="weapon"
           name="weapon"
           className="weapon-name"
-          autoComplete="off"          
+          autoComplete="off"
           placeholder="weapon name"
         />
 
@@ -82,7 +74,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="range"
               id="range"
-              pattern="[0-9]*"
               className="att-values"
               autoComplete="off"
               required
@@ -97,7 +88,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="a"
               id="a"
-              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -112,7 +102,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="bs"
               id="bs"
-              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -127,7 +116,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="s"
               id="s"
-              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -142,7 +130,6 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="ap"
               id="ap"
-              pattern="[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
@@ -157,30 +144,29 @@ export default function StepFour({ nextStep, previousStep }: StepFourProps) {
               type="text"
               name="d"
               id="d"
-              pattern="^[dD]?-?(\d+)?"
               className="att-values"
               autoComplete="off"
               required
             />
           </div>
         </div>
-            <Abilities abilities={abilities} setAbilities={setAbilities}/>
+        <Abilities abilities={abilities} setAbilities={setAbilities} />
       </div>
       <button onClick={handleBack}>Back</button>
-      <button 
-      type="submit" 
-      name="continue"
-      onClick={() => setSubmitButton('continue')}
+      <button
+        type="submit"
+        name="continue"
+        onClick={() => setSubmitButton("continue")}
       >
         Submit
-        </button>
-      <button 
-      type="submit" 
-      name="addAnother"
-      onClick={()=> setSubmitButton('addAnother')}
+      </button>
+      <button
+        type="submit"
+        name="addAnother"
+        onClick={() => setSubmitButton("addAnother")}
       >
         Add Another
-        </button>
+      </button>
     </form>
   );
 }

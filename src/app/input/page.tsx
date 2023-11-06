@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import "./input.css";
 import StepTwo from "./steps/StepTwo";
@@ -11,8 +11,8 @@ import StepFive from './steps/StepFive'
 import StepSix from './steps/StepSix';
 
 export default function Input() {
-  const [step, setStep] = useState(1)
-  const [unitData, setUnitData] = useState()
+  const [step, setStep] = useState(1) 
+  const [unitData, setUnitData] = useState(null)
 
   const nextStep = () => {
     setStep(step + 1)
@@ -22,16 +22,20 @@ export default function Input() {
     setStep(step - 1)
   }
 
- 
+  useEffect(()=>{
+    console.log('update to unit data: ', unitData)
+  },[unitData])
+  
   return (
     <div className="form-container">
-        {step === 1 && <StepOne nextStep={nextStep} unitData={unitData} setUnitData={setUnitData}/>}
-        {step === 2 && <StepTwo nextStep={nextStep} previousStep={previousStep} />}
-        {step === 3 && <StepThree nextStep={nextStep} previousStep={previousStep} />}
-        {step === 4 && <StepFour nextStep={nextStep} previousStep={previousStep} />}
-        {step === 5 && <StepFive nextStep={nextStep} previousStep={previousStep} />}
-        {step === 6 && <StepSix nextStep={nextStep} previousStep={previousStep} />}
+        {step === 1 && <StepOne nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
+        {step === 2 && <StepTwo nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
+        {step === 3 && <StepThree nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
+        {step === 4 && <StepFour nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
+        {step === 5 && <StepFive nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
+        {step === 6 && <StepSix nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
 {/* todo: invuln save, unit comp, wargear options, abilities, leader, keywords */}
+<pre>{JSON.stringify(unitData, null, 2)}</pre>
     </div>
   );
 }

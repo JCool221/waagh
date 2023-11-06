@@ -3,35 +3,29 @@
 import "../input.css";
 import { FormEvent } from "react";
 import { useState, useRef } from 'react'
+import { Props } from "@/lib/types/props";
 
-interface StepThreeProps {
-  nextStep: () => void;
-  previousStep: () => void;
-}
-
-export default function StepThree({ nextStep, previousStep }: StepThreeProps) {
+export default function StepThree({ nextStep, previousStep, unitData, setUnitData }: Props) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [submitButton, setSubmitButton] = useState<string | null>(null);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const existingData = localStorage.getItem('unit');
+    const existingData = unitData;
 
-    if(existingData){
-      const existingUnitData = JSON.parse(existingData)
+    // if(existingData){
+    //   const unitData = existingData
       if (e.target instanceof HTMLFormElement) {
         const form = new FormData(e.target);
-        const formData = Object.fromEntries(form.entries());
+        const formData = Object.fromEntries(form.entries());  
         
-        if (Array.isArray(existingUnitData.attributes)){
-          existingUnitData.attributes.push(formData)
+        if (Array.isArray(unitData.attributes)){
+          unitData.attributes.push(formData)
         } else {
-          existingUnitData.attributes = [formData]
+          unitData.attributes = [formData]
         }
-
-        console.log(existingUnitData);
-        localStorage.setItem("unit", JSON.stringify(existingUnitData));
+        setUnitData(unitData);
 
         if(submitButton === 'addAnother') {
           formRef.current?.reset()
@@ -42,10 +36,11 @@ export default function StepThree({ nextStep, previousStep }: StepThreeProps) {
       } else {
         console.error("e is not a form element, why?");
       }
-    } else {
-      console.error('no unit data found in storage')
-    }
-  };
+    } 
+    // else {
+    //   console.error('no unit data found in storage')
+    // }
+  // };
 
   const handleBack =()=> {
     previousStep();
@@ -172,6 +167,7 @@ export default function StepThree({ nextStep, previousStep }: StepThreeProps) {
       >
         Add Another
         </button>
+        <button onClick={handleBack}/>
     </form>
   );
 }

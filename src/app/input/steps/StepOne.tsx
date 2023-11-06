@@ -3,12 +3,9 @@
 import "../input.css";
 import data from "../../../lib/data/factions.json"
 import { FormEvent, ChangeEvent, useState } from 'react'
-import { Faction, FactionsData, TopLevelFaction } from '../../../lib/types/factions'
+import { Faction, TopLevelFaction } from '../../../lib/types/factions'
 import { Props } from '../../../lib/types/props'
 
-// interface StepOneProps {
-//     nextStep: () => void;
-// }
 export default function StepOne({ nextStep, unitData, setUnitData }: Props) {
     const [selectedTopLevelFaction, setSelectedTopLevelFaction] = useState<string>('')
     const [selectedSubFaction, setSelectedSubFaction] = useState<string>('');
@@ -16,14 +13,15 @@ export default function StepOne({ nextStep, unitData, setUnitData }: Props) {
     
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setUnitData(null);
         localStorage.removeItem('unit')
         if (e.target instanceof HTMLFormElement) {
             const form = new FormData(e.target);
             const formData = Object.fromEntries(form.entries());
             // console.log(formData);
-            setUnitData(JSON.stringify(formData))
-            console.log(unitData)
-            localStorage.setItem("unit", JSON.stringify(formData));
+            setUnitData(formData)
+            // console.log(unitData)
+            // localStorage.setItem("unit", JSON.stringify(formData));
             nextStep();
         } else {
             console.error("e is not a form element, why?");
