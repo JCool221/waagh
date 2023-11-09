@@ -8,9 +8,6 @@ export default function StepTwo({ nextStep, previousStep, unitData, setUnitData 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const existingData = unitData;
-
-    if(existingData){
       if (e.target instanceof HTMLFormElement) {
         const form = new FormData(e.target);
         const formData = Object.fromEntries(form.entries());
@@ -22,10 +19,7 @@ export default function StepTwo({ nextStep, previousStep, unitData, setUnitData 
       } else {
         console.error("e is not a form element, why?");
       }
-    } else {
-      console.error('no unit data found in storage')
-    }
-  };
+      };
 
   const handleBack =()=> {
     previousStep();
@@ -43,7 +37,8 @@ export default function StepTwo({ nextStep, previousStep, unitData, setUnitData 
         placeholder="enter name"
         required
       />
-      <label htmlFor="points">Points</label>
+      {/* the points amount should probably be in a unit composisiton section */}
+      {/* <label htmlFor="points">Points</label>
       <input
         type="text"
         name="points"
@@ -53,7 +48,7 @@ export default function StepTwo({ nextStep, previousStep, unitData, setUnitData 
         className="form-points"
         placeholder="enter points"
         required
-      />
+      /> */}
       <button onClick={handleBack}>Back</button>
       <button type="submit">Submit</button>
     </form>

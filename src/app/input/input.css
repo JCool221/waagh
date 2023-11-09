@@ -76,6 +76,23 @@ select {
     margin-top: 5px;
 }
 
+textarea {
+    margin-top: 1rem;
+}
+
 .instructions {
     font-size: small;
+}
+
+.ability-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.pre-data{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 5rem;
+    opacity: .5;
 }

@@ -10,44 +10,25 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
   const formRef = useRef<HTMLFormElement | null>(null);
   const [submitButton, setSubmitButton] = useState<string | null>(null);
 
-  const [abilities, setAbilities] = useState<string[]>([])
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const existingData = localStorage.getItem('unit');
-
-    if(existingData){
-      const existingUnitData = JSON.parse(existingData)
-      if (e.target instanceof HTMLFormElement) {
+    if (e.target instanceof HTMLFormElement) {
         const form = new FormData(e.target);
         const formData = Object.fromEntries(form.entries());
 
-        const abilitiesString = abilities.join(',')
-        formData.abilities = abilitiesString
-        
-        if (Array.isArray(existingUnitData.melee)){
-          existingUnitData.melee.push(formData)
-        } else {
-          existingUnitData.melee = [formData]
-        }
+        const updatedUnitData = {...unitData, ...formData}
 
-        console.log(existingUnitData);
-        localStorage.setItem("unit", JSON.stringify(existingUnitData));
-
-        if(submitButton === 'addAnother') {
-          formRef.current?.reset()
-        } else if (submitButton === 'continue') {
-          nextStep()
-        }
-
+        setUnitData(updatedUnitData)
+        nextStep();
       } else {
         console.error("e is not a form element, why?");
       }
-    } else {
-      console.error('no unit data found in storage')
-    }
-  };
+      };
+
+    
+  
 
   const handleBack =()=> {
     previousStep();
@@ -57,91 +38,25 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
   return (
     // refactor for step six abilities, keywords are accesible under abilties.unit need to think about how to refactor the abilities component for that
     <form className="form-inputs"  ref={formRef} onSubmit={handleSubmit}>
-      <h1>Melee Weapons</h1>
-      <p className="instructions">submit empty if none</p>
-      <div className="att-form">
+      <h1>Abilities</h1>
+      <div className="ability-form">
         <input
           type="text"
-          id="weapon"
-          name="weapon"
-          className="weapon-name"
+          id="ability-name"
+          name="ability-name"
+          className="ability-name"
           autoComplete="off"          
-          placeholder="weapon name"
+          placeholder="ability name"
         />
+        <textarea 
+        name="ability-text" 
+        id="ability-text" 
+        cols={30} 
+        rows={10}
+        placeholder="Enter the Ability Description"
+        >
+        </textarea>
 
-        <div className="attributes">
-
-          <div className="att-block">
-            <label className="att-label" htmlFor="a">
-              A
-            </label>
-            <input
-              type="text"
-              name="a"
-              id="a"
-              className="att-values"
-              autoComplete="off"
-              required
-            />
-          </div>
-
-          <div className="att-block">
-            <label className="att-label" htmlFor="ws">
-              WS
-            </label>
-            <input
-              type="text"
-              name="ws"
-              id="ws"
-              className="att-values"
-              autoComplete="off"
-              required
-            />
-          </div>
-
-          <div className="att-block">
-            <label className="att-label" htmlFor="s">
-              S
-            </label>
-            <input
-              type="text"
-              name="s"
-              id="s"
-              className="att-values"
-              autoComplete="off"
-              required
-            />
-          </div>
-
-          <div className="att-block">
-            <label className="att-label" htmlFor="ap">
-              AP
-            </label>
-            <input
-              type="text"
-              name="ap"
-              id="ap"
-              className="att-values"
-              autoComplete="off"
-              required
-            />
-          </div>
-
-          <div className="att-block">
-            <label className="att-label" htmlFor="d">
-              D
-            </label>
-            <input
-              type="text"
-              name="d"
-              id="d"
-              className="att-values"
-              autoComplete="off"
-              required
-            />
-          </div>
-        </div>
-        <Abilities abilities={abilities} setAbilities={setAbilities}/>
       </div>
       <button onClick={handleBack}>Back</button>
       <button 
@@ -158,6 +73,7 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
       >
         Add Another
         </button>
+        {/* abilities will go here but still needs refactored to add a set of keyword abilities.  or i'll make a new component, that might be easier at this point */}
     </form>
   );
 }

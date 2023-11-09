@@ -5,8 +5,11 @@ export default function Home() {
 
   return (
     <main>
+      <div></div>
+        <div className="form-container">
       <StepSix />
-        <div className="form-container">Lets Go!</div>
+          {/* Lets Go! */}
+        </div>
     </main>
   )
 }

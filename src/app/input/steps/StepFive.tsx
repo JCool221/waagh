@@ -73,7 +73,6 @@ export default function StepFour({ nextStep, previousStep, unitData, setUnitData
               id="a"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
 
@@ -87,7 +86,6 @@ export default function StepFour({ nextStep, previousStep, unitData, setUnitData
               id="ws"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
 
@@ -101,7 +99,6 @@ export default function StepFour({ nextStep, previousStep, unitData, setUnitData
               id="s"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
 
@@ -115,7 +112,6 @@ export default function StepFour({ nextStep, previousStep, unitData, setUnitData
               id="ap"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
 
@@ -129,7 +125,6 @@ export default function StepFour({ nextStep, previousStep, unitData, setUnitData
               id="d"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
         </div>
