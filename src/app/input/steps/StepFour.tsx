@@ -76,7 +76,6 @@ export default function StepFour({
               id="range"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
 
@@ -90,7 +89,6 @@ export default function StepFour({
               id="a"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
 
@@ -104,7 +102,6 @@ export default function StepFour({
               id="bs"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
 
@@ -118,7 +115,6 @@ export default function StepFour({
               id="s"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
 
@@ -132,7 +128,6 @@ export default function StepFour({
               id="ap"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
 
@@ -146,7 +141,6 @@ export default function StepFour({
               id="d"
               className="att-values"
               autoComplete="off"
-              required
             />
           </div>
         </div>
