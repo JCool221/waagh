@@ -14,8 +14,9 @@ export default function StepFour({
 }: Props) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [submitButton, setSubmitButton] = useState<string | null>(null);
-
+  const [linked, setLinked] = useState<boolean>(false);
   const [abilities, setAbilities] = useState<string[]>([]);
+  const type = 'weapon'
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,6 +28,10 @@ export default function StepFour({
       const abilitiesString = abilities.join(",");
       formData.abilities = abilitiesString;
 
+      if (linked === true) {
+        formData["linked"] = "true";
+      }
+
       if (Array.isArray(unitData.ranged)) {
         unitData.ranged.push(formData);
       } else {
@@ -36,6 +41,10 @@ export default function StepFour({
       setUnitData(unitData);
 
       if (submitButton === "addAnother") {
+        setAbilities([]);
+        setLinked(false);
+        formRef.current?.reset();
+      } else if (submitButton === "linkedProfile") {
         setAbilities([]);
         formRef.current?.reset();
       } else if (submitButton === "continue") {
@@ -144,7 +153,7 @@ export default function StepFour({
             />
           </div>
         </div>
-        <Abilities abilities={abilities} setAbilities={setAbilities} />
+        <Abilities type={type} abilities={abilities} setAbilities={setAbilities} />
       </div>
       <button onClick={handleBack}>Back</button>
       <button
@@ -160,6 +169,16 @@ export default function StepFour({
         onClick={() => setSubmitButton("addAnother")}
       >
         Add Another
+      </button>
+      <button
+        type="submit"
+        name="linkedProfile"
+        onClick={() => {
+          setSubmitButton("linkedProfile");
+          setLinked(true);
+        }}
+      >
+        Add Weapon Mode
       </button>
     </form>
   );

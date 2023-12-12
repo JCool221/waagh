@@ -6,16 +6,18 @@ import data from "../data/abilities.json"
 import AbiltitiesList from './list'
 
 interface AbilitiesProps {
+    type: keyof typeof data
     abilities: string[];
     setAbilities: Dispatch<SetStateAction<string[]>>;
   }
   
 
-export default function Abilities({ abilities, setAbilities }: AbilitiesProps) {
+export default function Abilities({ type, abilities, setAbilities }: AbilitiesProps) {
     
     const handleAbilities = (e: ChangeEvent<HTMLSelectElement>) => {
+
         let selectedAbility = e.target.value;
-        const selectedAbiltiyObject = data.weapon.find(ability => ability.name === selectedAbility)
+        const selectedAbiltiyObject = data[type].find(ability => ability.name === selectedAbility)
 
         if (selectedAbiltiyObject && selectedAbiltiyObject.extend === true) {
             const extendInput = window.prompt('Please enter a keyword:')
@@ -53,8 +55,8 @@ export default function Abilities({ abilities, setAbilities }: AbilitiesProps) {
             id="abilities"
             onChange={handleAbilities}
             >
-                <option disabled value="">--Select any ability keywords</option>
-        {data.weapon.map((ability, index) => (
+                <option disabled selected value="">--Select any ability keywords</option>
+        {data[type].map((ability, index) => (
             <option key={index}>{ability.name}</option>
             ))}
             </select>
