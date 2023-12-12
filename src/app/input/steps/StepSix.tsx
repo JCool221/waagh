@@ -3,12 +3,15 @@
 import "../input.css";
 import { FormEvent } from "react";
 import { useState, useRef } from 'react'
-import Abilities from "@/lib/abilities/Abilities";
 import { Props } from "@/lib/types/props";
+import Abilities from "@/lib/abilities/Abilities";
 
 export default function StepSix({ nextStep, previousStep, unitData, setUnitData }: Props) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [submitButton, setSubmitButton] = useState<string | null>(null);
+  const [abilities, setAbilities] = useState<string[]>([]);
+  const type = 'unit'
+
 
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -21,15 +24,16 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
         const updatedUnitData = {...unitData, ...formData}
 
         setUnitData(updatedUnitData)
-        nextStep();
+        if (submitButton==='continue') {
+          nextStep();
+        } else if (submitButton==='addAnother') {
+          formRef.current?.reset();
+        }
       } else {
         console.error("e is not a form element, why?");
       }
       };
-
-    
-  
-
+      
   const handleBack =()=> {
     previousStep();
   }
@@ -73,6 +77,8 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
       >
         Add Another
         </button>
+        <Abilities type={type} abilities={abilities} setAbilities={setAbilities} />
+
         {/* abilities will go here but still needs refactored to add a set of keyword abilities.  or i'll make a new component, that might be easier at this point */}
     </form>
   );

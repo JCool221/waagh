@@ -16,6 +16,7 @@ export default function StepFour({
   const [submitButton, setSubmitButton] = useState<string | null>(null);
   const [linked, setLinked] = useState<boolean>(false);
   const [abilities, setAbilities] = useState<string[]>([]);
+  const type = 'weapon'
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -152,7 +153,7 @@ export default function StepFour({
             />
           </div>
         </div>
-        <Abilities abilities={abilities} setAbilities={setAbilities} />
+        <Abilities type={type} abilities={abilities} setAbilities={setAbilities} />
       </div>
       <button onClick={handleBack}>Back</button>
       <button
