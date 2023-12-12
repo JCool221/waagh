@@ -164,13 +164,6 @@
       "value": false
     },
     {
-      "name": "big guns never tire",
-      "description": "Monster and Vehicle units are eligible to shoot in their controlling player’s Shooting phase even while they are within Engagement Range of one or more enemy units. Ranged weapons equipped by Monster and Vehicle units can target one or more of the enemy units they are within Engagement Range of, even if other friendly units are also within Engagement Range of the same enemy unit. Each time a Monster or Vehicle model makes a ranged attack, if its unit was within Engagement Range of one or more enemy units when it selected its targets, unless that attack is made with a Pistol, subtract 1 from that attack’s Hit roll.",
-      "tooltip": "Monster and Vehicle units can shoot, and be shot at, even while they are within Engagement Range of enemy units. Each time a ranged attack is made by or against such a unit, subtract 1 from that attack’s Hit roll (unless shooting with a Pistol).",
-      "extend": false,
-      "value": false
-    },
-    {
       "name": "feel no pain",
       "description": "Some models have 'Feel No Pain x+' listed in their abilities. Each time a model with this ability suffers damage and would lose a wound (including wounds from mortal wounds), roll one D6. If the result is greater than or equal to 'x', the wound is ignored and not lost. If a model has multiple Feel No Pain abilities, use only one per damage instance.",
       "tooltip": "Feel No Pain x+: Each time this model would lose a wound, roll one D6. If the result equals or exceeds 'x', the wound is not lost.",
@@ -189,7 +182,7 @@
       "description": "Units with this ability that are eligible to fight do so in the Fights First step, provided every model in the unit has this ability",
       "tooltip": "Units with this ability that are eligible to fight do so in the Fights First step, provided every model in the unit has this ability",
       "extend": false,
-      "value": true
+      "value": false
     },
     {
       "name": "deep strike",
