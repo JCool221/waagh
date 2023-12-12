@@ -23,6 +23,15 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
 
         const updatedUnitData = {...unitData, ...formData}
 
+        const abilitiesString = abilities.join(",");
+        formData.abilities = abilitiesString
+
+        if (Array.isArray(unitData.abilties)) {
+          unitData.abilities.push(formData)
+        } else {
+          unitData.abilities = [formData]
+        }
+
         setUnitData(updatedUnitData)
         if (submitButton==='continue') {
           nextStep();
@@ -78,8 +87,7 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
         Add Another
         </button>
         <Abilities type={type} abilities={abilities} setAbilities={setAbilities} />
-
-        {/* abilities will go here but still needs refactored to add a set of keyword abilities.  or i'll make a new component, that might be easier at this point */}
+      {/* todo add array to handle this properly. currently getting 1 custom and 1 keyword ability */}
     </form>
   );
 }
