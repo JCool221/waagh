@@ -60,7 +60,6 @@ export default function StepFour({
   };
 
   return (
-    // for step four we will be refactoring step three for ranged weapons (and then 5 will be melee)
     <form className="form-inputs" ref={formRef} onSubmit={handleSubmit}>
       <h1>Melee Weapons</h1>
       <p className="instructions">submit empty if none</p>
