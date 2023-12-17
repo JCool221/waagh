@@ -9,6 +9,7 @@ import StepThree from './steps/StepThree';
 import StepFour from './steps/StepFour';
 import StepFive from './steps/StepFive'
 import StepSix from './steps/StepSix';
+import StepSeven from './steps/StepSeven';
 
 export default function Input() {
   const [step, setStep] = useState(1) 
@@ -34,7 +35,8 @@ export default function Input() {
         {step === 4 && <StepFour nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
         {step === 5 && <StepFive nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
         {step === 6 && <StepSix nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
-{/* todo: invuln save, unit comp, wargear options, abilities, leader, keywords */}
+        {step === 7 && <StepSeven nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
+{/* todo: invuln save, unit comp, wargear options, leader, keywords */}
 <div className='pre-data'>
 <pre>{JSON.stringify(unitData, null, 2)}</pre>
 </div>

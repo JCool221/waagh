@@ -52,7 +52,6 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
 
 
   return (
-    // refactor for step six abilities, keywords are accesible under abilties.unit need to think about how to refactor the abilities component for that
     <form className="form-inputs"  ref={formRef} onSubmit={handleSubmit}>
       <h1>Abilities</h1>
       <div className="ability-form">
