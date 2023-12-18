@@ -1,21 +1,28 @@
 "use client"
 
 import "../input.css"
-import { FormEvent, useState } from "react"
+import { FormEvent, useEffect, useState } from "react"
 import { Props } from "@/lib/types/props"
-import CheckBoxWithInput from "@/lib/checkboxwithinput/CheckBoxWithInput"
+import CheckBoxWithInput from "@/lib/checkboxes/checkboxwithinput/CheckBoxWithInput"
+import CheckboxWithoutInput from "@/lib/checkboxes/checkboxwithoutinput/CheckboxWithoutInput"
+
 
 export default function StepSeven({ nextStep, previousStep, unitData, setUnitData}: Props) {
-    const [userInput, setUserInput] = useState<Record<string, string>>({})
+    const [userInput, setUserInput] = useState<Record<string, string>[]>([])
+    const [formInput, setFormInput] = useState<Record<string, string>[]>([])
 
-
+    useEffect(() =>{console.log(formInput)}, [formInput])
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
         if (e.target instanceof HTMLFormElement) {  
             console.log(userInput)
-            console.log("refactoring")
-        } else {
+            // if (formInput.length===0) {
+            //     setFormInput([userInput])
+            // } else {
+            //     setFormInput([...formInput, userInput])
+            // }
+             } else {
             console.error("e is not a form element, why?")
         }
     }
@@ -31,6 +38,12 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
                 label="invuln" 
                 checkboxId="invuln" 
                 inputId="invuln"
+                userInput={userInput}
+                setUserInput={setUserInput}
+                />
+                <CheckboxWithoutInput
+                label="leader"
+                checkboxId="leader"
                 userInput={userInput}
                 setUserInput={setUserInput}
                 />

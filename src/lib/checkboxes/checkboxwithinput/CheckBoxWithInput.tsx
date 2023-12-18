@@ -1,13 +1,15 @@
 "use client"
 
+import '../checkboxes.css'
+
 import { useState, useEffect, ChangeEvent, Dispatch, SetStateAction } from "react"
 
 interface CheckboxWithInputProps {
     label: string;
     checkboxId: string;
     inputId: string;
-    userInput: Record<string, string > | null;
-    setUserInput: Dispatch<SetStateAction<Record<string, string>>>;
+    userInput: Record<string, string >[] | null;
+    setUserInput: Dispatch<SetStateAction<Record<string, string>[]>>;
 }
 
 export default function CheckBoxWithInput({
@@ -22,10 +24,9 @@ export default function CheckBoxWithInput({
     const [inputValue, setInputValue] = useState("")
 
     useEffect(() => {
-        // console.log(checkboxId,': ',inputValue)
-        let myObject: Record<string, string> | null = null
-        myObject = { [checkboxId]: inputValue }
-        setUserInput(myObject)
+        let myObj: Record<string, string> | null = null
+        myObj = { [checkboxId]: inputValue }
+        setUserInput([...inputValue, myObj])
     }, [inputValue])
 
     const handleSelection = () => {
@@ -39,8 +40,9 @@ export default function CheckBoxWithInput({
 
     return(
         <div>
-            <label>
+            <label className="checkbox-label">
                 <input 
+                className="checkbox"
                 type="checkbox" 
                 id={checkboxId}
                 checked={isChecked}
@@ -50,7 +52,9 @@ export default function CheckBoxWithInput({
             </label>
             {isChecked && (
                 <input 
+                className="checkbox-text-input"
                 type="text" 
+                autoComplete='off'
                 id={inputId}
                 value={inputValue}
                 onChange={handleInputChange}

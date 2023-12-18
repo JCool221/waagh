@@ -1,0 +1,13 @@
+.checkbox {
+    margin-right: 1rem;
+}
+
+.checkbox-text-input {
+    position: absolute;
+    left: 52.5%;
+    border: 2px solid black;
+    padding: 1px;
+    border-radius: 5px;
+    width: 3rem;
+    text-align: center;
+}
