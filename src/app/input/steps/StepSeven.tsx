@@ -3,28 +3,16 @@
 import "../input.css"
 import { FormEvent, useEffect, useState } from "react"
 import { Props } from "@/lib/types/props"
-import CheckBoxWithInput from "@/lib/checkboxes/checkboxwithinput/CheckBoxWithInput"
-import CheckboxWithoutInput from "@/lib/checkboxes/checkboxwithoutinput/CheckboxWithoutInput"
-
 
 export default function StepSeven({ nextStep, previousStep, unitData, setUnitData}: Props) {
-    const [userInput, setUserInput] = useState<Record<string, string>[]>([])
-    const [formInput, setFormInput] = useState<Record<string, string>[]>([])
+    const [invuln, setInvuln] = useState(false)
+    const [restricion, setRestriction] = useState(false)
+    const [leader, setLeader] = useState(false)
+    const [transport, setTransport] = useState(false)
 
-    useEffect(() =>{console.log(formInput)}, [formInput])
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        
-        if (e.target instanceof HTMLFormElement) {  
-            console.log(userInput)
-            // if (formInput.length===0) {
-            //     setFormInput([userInput])
-            // } else {
-            //     setFormInput([...formInput, userInput])
-            // }
-             } else {
-            console.error("e is not a form element, why?")
-        }
+    
+    const handleSubmit =()=> {
+        console.log('submitted')
     }
 
     const handleBack = () => {
@@ -34,19 +22,69 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
     return (
         <form className="form-inputs" onSubmit={handleSubmit}>
             <h1>Other stuff</h1>
-                <CheckBoxWithInput 
-                label="invuln" 
-                checkboxId="invuln" 
-                inputId="invuln"
-                userInput={userInput}
-                setUserInput={setUserInput}
+            <label className="checkbox-label">
+                <input 
+                className="checkbox"
+                type="checkbox"
+                checked={invuln}
+                onChange={()=> setInvuln(!invuln)}
                 />
-                <CheckboxWithoutInput
-                label="leader"
-                checkboxId="leader"
-                userInput={userInput}
-                setUserInput={setUserInput}
+                Invuln
+                {invuln ? <>
+                            <input
+                            type="text"
+                            size={1}
+                            className="checkbox-numeral"
+                            /> 
+                            <label>
+
+                            <input
+                            className="checkbox"
+                            type="checkbox"
+                            checked={restricion}
+                            onChange={()=> setRestriction(!restricion)}
+                            />
+                            Restriction
+                                {restricion ? <textarea
+                                                className="checkbox-area"
+                                                rows={2}
+                                                placeholder="enter restrictions"
+                                                />
+                                :null}
+                            </label>
+                            </>
+                            : null}
+
+            </label>
+            <label className="checkbox-label">
+                <input 
+                type="checkbox"
+                className="checkbox"
+                checked={leader}
+                onChange={()=> setLeader(!leader)}
+                 />
+                Leader
+                {leader ? <textarea
+                            className="checkbox-area"
+                            rows={3}
+                            cols={15}
+                            placeholder="enter one unit per line"
+                            /> : null}
+            </label>
+            <label className="checkbox-label">
+                <input 
+                className="checkbox"
+                type="checkbox"
+                checked={transport}
+                onChange={()=> setTransport(!transport)}
                 />
+                Transport
+                {transport ? <input
+                            type="text"
+                            size={1}
+                            className="checkbox-numeral"
+                            /> : null}
+            </label>
 
             <button onClick={handleBack}>Back</button>
             <button type="submit" >Submit</button>
