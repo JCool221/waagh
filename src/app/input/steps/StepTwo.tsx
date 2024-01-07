@@ -12,7 +12,6 @@ export default function StepTwo({ nextStep, previousStep, unitData, setUnitData 
 
         setUnitData({...unitData, ...Object.fromEntries(new FormData(form))})
 
-        // setUnitData(updatedUnitData)
         nextStep();
 
       };
