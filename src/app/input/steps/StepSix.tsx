@@ -21,18 +21,21 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
         const form = new FormData(e.target);
         const formData = Object.fromEntries(form.entries());
 
-        const updatedUnitData = {...unitData, ...formData}
-
         const abilitiesString = abilities.join(",");
         formData.abilities = abilitiesString
 
-        if (Array.isArray(unitData.abilties)) {
-          unitData.abilities.push(formData)
+        const updatedAbilities = [...abilities]
+
+        setAbilities(updatedAbilities)
+
+        if (Array.isArray(unitData.ability)) {
+          unitData.ability.push(formData)
         } else {
-          unitData.abilities = [formData]
+          unitData.ability = [formData]
         }
 
-        setUnitData(updatedUnitData)
+        setUnitData(unitData)
+        
         if (submitButton==='continue') {
           nextStep();
         } else if (submitButton==='addAnother') {
@@ -49,7 +52,6 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
 
 
   return (
-    // refactor for step six abilities, keywords are accesible under abilties.unit need to think about how to refactor the abilities component for that
     <form className="form-inputs"  ref={formRef} onSubmit={handleSubmit}>
       <h1>Abilities</h1>
       <div className="ability-form">
@@ -87,7 +89,6 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
         Add Another
         </button>
         <Abilities type={type} abilities={abilities} setAbilities={setAbilities} />
-      {/* todo add array to handle this properly. currently getting 1 custom and 1 keyword ability */}
     </form>
   );
 }
