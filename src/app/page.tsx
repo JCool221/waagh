@@ -1,13 +1,12 @@
 import './input/input.css'
-import StepSeven from './input/steps/StepSeven'
+import StepEight from './input/steps/stepEight'
 
 export default function Home() {
 
   return (
     <main>
-      <div></div>
         <div className="form-container">
-      <StepSeven />
+      <StepEight />
           {/* Lets Go! */}
         </div>
     </main>
