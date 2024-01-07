@@ -11,8 +11,10 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
     const [transport, setTransport] = useState(false)
 
     
-    const handleSubmit =()=> {
-        console.log('submitted')
+    const handleSubmit =(e: FormEvent<HTMLFormElement>)=> {
+        e.preventDefault();
+        const form = e.target as HTMLFormElement;
+        setUnitData({...unitData, ...Object.fromEntries(new FormData(form))})
     }
 
     const handleBack = () => {
@@ -25,6 +27,7 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
             <label className="checkbox-label">
                 <input 
                 className="checkbox"
+                name="invuln"
                 type="checkbox"
                 checked={invuln}
                 onChange={()=> setInvuln(!invuln)}
@@ -33,6 +36,7 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
                 {invuln ? <>
                             <input
                             type="text"
+                            name="value"
                             size={1}
                             className="checkbox-numeral"
                             /> 
@@ -40,6 +44,7 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
 
                             <input
                             className="checkbox"
+                            name="restriction"
                             type="checkbox"
                             checked={restricion}
                             onChange={()=> setRestriction(!restricion)}
@@ -47,6 +52,7 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
                             Restriction
                                 {restricion ? <textarea
                                                 className="checkbox-area"
+                                                name="types"
                                                 rows={2}
                                                 placeholder="enter restrictions"
                                                 />
@@ -60,6 +66,7 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
                 <input 
                 type="checkbox"
                 className="checkbox"
+                name="leader"
                 checked={leader}
                 onChange={()=> setLeader(!leader)}
                  />
@@ -67,6 +74,7 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
                 {leader ? <textarea
                             className="checkbox-area"
                             rows={3}
+                            name="units"
                             cols={15}
                             placeholder="enter one unit per line"
                             /> : null}
@@ -75,14 +83,16 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
                 <input 
                 className="checkbox"
                 type="checkbox"
+                name="transport"
                 checked={transport}
                 onChange={()=> setTransport(!transport)}
                 />
                 Transport
-                {transport ? <input
-                            type="text"
-                            size={1}
-                            className="checkbox-numeral"
+                {transport ? <textarea                            
+                            rows={3}
+                            name="information"
+                            cols={15}
+                            className="checkbox-area"
                             /> : null}
             </label>
 
@@ -90,4 +100,4 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
             <button type="submit" >Submit</button>
         </form>
     )
-}
+                }

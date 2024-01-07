@@ -8,17 +8,13 @@ export default function StepTwo({ nextStep, previousStep, unitData, setUnitData 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-      if (e.target instanceof HTMLFormElement) {
-        const form = new FormData(e.target);
-        const formData = Object.fromEntries(form.entries());
+        const form = e.target as HTMLFormElement;
 
-        const updatedUnitData = {...unitData, ...formData}
+        setUnitData({...unitData, ...Object.fromEntries(new FormData(form))})
 
-        setUnitData(updatedUnitData)
+        // setUnitData(updatedUnitData)
         nextStep();
-      } else {
-        console.error("e is not a form element, why?");
-      }
+
       };
 
   const handleBack =()=> {
