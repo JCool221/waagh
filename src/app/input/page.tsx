@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 
 import "./input.css";
+import InputCard from '@/lib/card/inputCard';
 import StepTwo from "./steps/StepTwo";
 import StepOne from './steps/StepOne';
 import StepThree from './steps/StepThree';
@@ -40,9 +41,10 @@ export default function Input() {
         {step === 8 && <StepEight nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
 
 {/* todo: unit comp, wargear options */}
-<div className='pre-data'>
+<InputCard unitData={unitData} />
+{/* <div className='pre-data'>
 <pre>{JSON.stringify(unitData, null, 2)}</pre>
-</div>
+</div> */}
     </div>
   );
 }
