@@ -115,3 +115,36 @@ textarea {
     border-radius: 5%;
 
 }
+
+.keyword-area {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 5px;
+}
+.modal-checkbox {
+    position: fixed;
+    border: 2px solid black;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 15px;
+    top: 50;
+    left: 50;
+    /* transform: translate(-1.5rem, 0); */
+}
+
+.modal-backdrop{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-button{
+    display: block;
+    text-align: center;
+    margin: auto;
+}

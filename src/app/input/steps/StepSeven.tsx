@@ -15,6 +15,7 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
         e.preventDefault();
         const form = e.target as HTMLFormElement;
         setUnitData({...unitData, ...Object.fromEntries(new FormData(form))})
+        nextStep();
     }
 
     const handleBack = () => {

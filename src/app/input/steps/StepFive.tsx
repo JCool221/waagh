@@ -16,42 +16,39 @@ export default function StepFour({
   const [submitButton, setSubmitButton] = useState<string | null>(null);
   const [linked, setLinked] = useState<boolean>(false);
   const [abilities, setAbilities] = useState<string[]>([]);
-  const type = 'weapon'
+  const type = "weapon";
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (e.target instanceof HTMLFormElement) {
-      const form = new FormData(e.target);
-      const formData = Object.fromEntries(form.entries());
+    const formData = Object.fromEntries(
+      new FormData(e.target as HTMLFormElement)
+    );
 
-      if (linked === true) {
-        formData["linked"] = "true";
-      }
+    if (linked === true) {
+      formData["linked"] = "true";
+    }
 
-      const abilitiesString = abilities.join(",");
-      formData.abilities = abilitiesString;
+    const abilitiesString = abilities.join(",");
+    formData.abilities = abilitiesString;
 
-      if (Array.isArray(unitData.melee)) {
-        unitData.melee.push(formData);
-      } else {
-        unitData.melee = [formData];
-      }
-
-      setUnitData(unitData);
-
-      if (submitButton === "addAnother") {
-        setAbilities([]);
-        setLinked(false);
-        formRef.current?.reset();
-      } else if (submitButton === "linkedProfile") {
-        setAbilities([]);
-        formRef.current?.reset();
-      } else if (submitButton === "continue") {
-        nextStep();
-      }
+    if (Array.isArray(unitData.melee)) {
+      unitData.melee.push(formData);
     } else {
-      console.error("e is not a form element, why?");
+      unitData.melee = [formData];
+    }
+
+    setUnitData(unitData);
+
+    if (submitButton === "addAnother") {
+      setAbilities([]);
+      setLinked(false);
+      formRef.current?.reset();
+    } else if (submitButton === "linkedProfile") {
+      setAbilities([]);
+      formRef.current?.reset();
+    } else if (submitButton === "continue") {
+      nextStep();
     }
   };
 
@@ -139,7 +136,11 @@ export default function StepFour({
             />
           </div>
         </div>
-        <Abilities type={type} abilities={abilities} setAbilities={setAbilities} />
+        <Abilities
+          type={type}
+          abilities={abilities}
+          setAbilities={setAbilities}
+        />
       </div>
       <button onClick={handleBack}>Back</button>
       <button
