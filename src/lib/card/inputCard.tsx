@@ -2,7 +2,9 @@
 import './card.css'
 import { Props } from "@/lib/types/props"
 
-export default function InputCard({unitData}: Props) {
+type InputCardProps = Pick<Props, 'unitData'>
+
+export default function InputCard({unitData}: InputCardProps) {
 
     return (
         <div className="inputcard-container">

@@ -1,5 +1,4 @@
 import './input/input.css'
-import StepEight from './input/steps/stepEight'
 
 export default function Home() {
 
