@@ -48,9 +48,6 @@ export default function Input() {
 
 {/* todo: unit comp, wargear options */}
 <InputCard unitData={unitData} />
-{/* <div className='pre-data'>
-<pre>{JSON.stringify(unitData, null, 2)}</pre>
-</div> */}
     </div>
   );
 }
