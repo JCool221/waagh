@@ -11,6 +11,6 @@ export default function StepTen({
   setUnitData,
 }: Props) {
     return(
-        <div>Unit Composition</div>
+        <div>Wargear Options</div>
     )
 }

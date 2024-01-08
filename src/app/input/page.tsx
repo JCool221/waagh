@@ -11,7 +11,7 @@ import StepFour from './steps/StepFour';
 import StepFive from './steps/StepFive'
 import StepSix from './steps/StepSix';
 import StepSeven from './steps/StepSeven';
-import StepEight from './steps/stepEight';
+import StepEight from './steps/StepEight';
 import StepNine from './steps/StepNine';
 import StepTen from './steps/StepTen';
 import FinalStep from './steps/FinalStep';
