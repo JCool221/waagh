@@ -2,53 +2,45 @@
 
 import "../input.css";
 import { FormEvent } from "react";
-import { useState, useRef } from 'react'
+import { useState, useRef } from "react";
 import { Props } from "@/lib/types/props";
 
-export default function StepThree({ nextStep, previousStep, unitData, setUnitData }: Props) {
+export default function StepThree({
+  nextStep,
+  previousStep,
+  unitData,
+  setUnitData,
+}: Props) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [submitButton, setSubmitButton] = useState<string | null>(null);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const existingData = unitData;
+    const formData = Object.fromEntries(
+      new FormData(e.target as HTMLFormElement)
+    );
 
-    // if(existingData){
-    //   const unitData = existingData
-      if (e.target instanceof HTMLFormElement) {
-        const form = new FormData(e.target);
-        const formData = Object.fromEntries(form.entries());  
-        
-        if (Array.isArray(unitData.attributes)){
-          unitData.attributes.push(formData)
-        } else {
-          unitData.attributes = [formData]
-        }
-        setUnitData(unitData);
+    if (Array.isArray(unitData.attributes)) {
+      unitData.attributes.push(formData);
+    } else {
+      unitData.attributes = [formData];
+    }
+    setUnitData(unitData);
 
-        if(submitButton === 'addAnother') {
-          formRef.current?.reset()
-        } else if (submitButton === 'continue') {
-          nextStep()
-        }
+    if (submitButton === "addAnother") {
+      formRef.current?.reset();
+    } else if (submitButton === "continue") {
+      nextStep();
+    }
+  };
 
-      } else {
-        console.error("e is not a form element, why?");
-      }
-    } 
-    // else {
-    //   console.error('no unit data found in storage')
-    // }
-  // };
-
-  const handleBack =()=> {
+  const handleBack = () => {
     previousStep();
-  }
-
+  };
 
   return (
-    <form className="form-inputs"  ref={formRef} onSubmit={handleSubmit}>
+    <form className="form-inputs" ref={formRef} onSubmit={handleSubmit}>
       <div className="att-form">
         <input
           type="text"
@@ -153,21 +145,21 @@ export default function StepThree({ nextStep, previousStep, unitData, setUnitDat
         </div>
       </div>
       <button onClick={handleBack}>Back</button>
-      <button 
-      type="submit" 
-      name="continue"
-      onClick={() => setSubmitButton('continue')}
+      <button
+        type="submit"
+        name="continue"
+        onClick={() => setSubmitButton("continue")}
       >
         Submit
-        </button>
-      <button 
-      type="submit" 
-      name="addAnother"
-      onClick={()=> setSubmitButton('addAnother')}
+      </button>
+      <button
+        type="submit"
+        name="addAnother"
+        onClick={() => setSubmitButton("addAnother")}
       >
         Add Another
-        </button>
-        <button onClick={handleBack}/>
+      </button>
+      <button onClick={handleBack} />
     </form>
   );
 }
