@@ -11,7 +11,10 @@ import StepFour from './steps/StepFour';
 import StepFive from './steps/StepFive'
 import StepSix from './steps/StepSix';
 import StepSeven from './steps/StepSeven';
-import StepEight from './steps/stepEight';
+import StepEight from './steps/StepEight';
+import StepNine from './steps/StepNine';
+import StepTen from './steps/StepTen';
+import FinalStep from './steps/FinalStep';
 
 export default function Input() {
   const [step, setStep] = useState(1) 
@@ -39,12 +42,12 @@ export default function Input() {
         {step === 6 && <StepSix nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
         {step === 7 && <StepSeven nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
         {step === 8 && <StepEight nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
+        {step === 9 && <StepNine nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
+        {step === 10 && <StepTen nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
+        {step === 11 && <FinalStep nextStep={nextStep} previousStep={previousStep} unitData={unitData} setUnitData={setUnitData}/>}
 
 {/* todo: unit comp, wargear options */}
 <InputCard unitData={unitData} />
-{/* <div className='pre-data'>
-<pre>{JSON.stringify(unitData, null, 2)}</pre>
-</div> */}
     </div>
   );
 }

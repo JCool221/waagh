@@ -1,0 +1,77 @@
+{
+    "topLevelFaction": "chaos",
+    "subFaction": "world eaters",
+    "name": "khorne berzerkers",
+    "attributes": [
+      {
+        "model": "",
+        "m": "6",
+        "t": "4",
+        "sv": "3",
+        "w": "2",
+        "ld": "6",
+        "oc": "2"
+      }
+    ],
+    "ranged": [
+      {
+        "weapon": "bolt pistol",
+        "range": "12",
+        "a": "1",
+        "bs": "3",
+        "s": "4",
+        "ap": "0",
+        "d": "1",
+        "abilities": "pistol"
+      },
+      {
+        "weapon": "plasma pistol - standard",
+        "range": "12",
+        "a": "1",
+        "bs": "3",
+        "s": "7",
+        "ap": "2",
+        "d": "1",
+        "abilities": "pistol",
+        "linked": "true"
+      },
+      {
+        "weapon": "plasma pistol - supercharge",
+        "range": "12",
+        "a": "1",
+        "bs": "3",
+        "s": "8",
+        "ap": "3",
+        "d": "2",
+        "abilities": "hazardous,pistol",
+        "linked": "true"
+      }
+    ],
+    "melee": [
+      {
+        "weapon": "berzerker chainblade",
+        "a": "4",
+        "ws": "3",
+        "s": "5",
+        "ap": "1",
+        "d": "1",
+        "abilities": ""
+      },
+      {
+        "weapon": "khornate eviscerator",
+        "a": "3",
+        "ws": "3",
+        "s": "8",
+        "ap": "2",
+        "d": "2",
+        "abilities": ""
+      }
+    ],
+    "ability": [
+      {
+        "ability-name": "blood surge",
+        "ability-text": " Each time an enemy unit is selected to shoot, if any of those attacks target this unit, after that enemy unit’s attacks have been resolved, if any models from this unit were destroyed by those attacks, this unit can make a Blood Surge move. If it does so, any actions this unit is performing fail, then roll one D6. Each model in this unit can be moved a distance in inches up to the result, but must finish this move as close as possible to the closest enemy unit. This unit cannot end this move within Engagement Range of any enemy units other than the closest enemy unit. A unit cannot make a Blood Surge move in the same turn it disembarked from a destroyed TRANSPORT model or if it is already within Engagement Range of any enemy units",
+        "abilities": ""
+      }
+    ]
+  }
