@@ -77,7 +77,8 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
                             rows={3}
                             name="units"
                             cols={15}
-                            placeholder="enter one unit per line"
+                            placeholder="enter one unit per line
+                            also include any notes"
                             /> : null}
             </label>
             <label className="checkbox-label">

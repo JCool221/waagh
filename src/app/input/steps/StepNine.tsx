@@ -4,20 +4,21 @@ import "../input.css";
 import { FormEvent, useState } from "react";
 import { Props } from "@/lib/types/props";
 // import data for build purposes
-import unitData from "@/lib/teststuff/testdata.json"
+// import unitData from "@/lib/teststuff/testdata.json"
 
 export default function StepNine({
   nextStep,
   previousStep,
-  // unitData,
+  unitData,
   setUnitData,
 }: Props) {
   const [another, handleAnother] = useState(false)
   const handleSubmit=(e: FormEvent<HTMLFormElement>)=> {
     e.preventDefault();
-    console.log(Object.fromEntries(new FormData(e.target as HTMLFormElement)))
+    setUnitData({
+      ...unitData,
+      ...Object.fromEntries(new FormData(e.target as HTMLFormElement))})
   }
-
 
     return(
         <form className="form-inputs" onSubmit={handleSubmit}>
@@ -29,6 +30,16 @@ export default function StepNine({
           className="checkbox-numeral"
           />
           </label>
+          <label>
+            for
+            <input 
+            type="text" 
+            name="minPoints"
+            size={1}
+            className="checkbox-numeral"
+            />
+            points
+          </label>
           <label >enter maximum amount of {unitData.name}
           <input 
           type="text" 
@@ -37,8 +48,19 @@ export default function StepNine({
           className="checkbox-numeral"
           />
           </label>
+          <label>
+            for
+            <input 
+            type="text" 
+            name="maxPoints"
+            size={1}
+            className="checkbox-numeral"
+            />
+            points
+          </label>
 
           <button type="submit">Submit</button>
+          <button onClick={previousStep}></button>
         </form>
     )
 }
