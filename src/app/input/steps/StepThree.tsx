@@ -45,7 +45,7 @@ export default function StepThree({
           className="model-name"
           autoComplete="off
           "
-          placeholder="model name (if different)"
+          placeholder="model name (include unit leaders like sargeant or champion)"
         />
 
         <div className="attributes">
