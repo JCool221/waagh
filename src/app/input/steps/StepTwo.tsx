@@ -20,10 +20,6 @@ export default function StepTwo({
     nextStep();
   };
 
-  const handleBack = () => {
-    previousStep();
-  };
-
   return (
     <form className="form-inputs" onSubmit={handleSubmit}>
       <label htmlFor="name">Unit name</label>
@@ -36,7 +32,7 @@ export default function StepTwo({
         placeholder="enter name"
         required
       />
-      <button onClick={handleBack}>Back</button>
+      <button onClick={previousStep}>Back</button>
       <button type="submit">Submit</button>
     </form>
   );

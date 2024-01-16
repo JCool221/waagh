@@ -52,10 +52,6 @@ export default function StepFour({
     }
   };
 
-  const handleBack = () => {
-    previousStep();
-  };
-
   return (
     <form className="form-inputs" ref={formRef} onSubmit={handleSubmit}>
       <h1>Ranged Weapons</h1>
@@ -155,7 +151,7 @@ export default function StepFour({
           setAbilities={setAbilities}
         />
       </div>
-      <button onClick={handleBack}>Back</button>
+      <button onClick={previousStep}>Back</button>
       <button
         type="submit"
         name="continue"

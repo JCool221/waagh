@@ -18,10 +18,6 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
         nextStep();
     }
 
-    const handleBack = () => {
-        previousStep();
-    }
-
     return (
         <form className="form-inputs" onSubmit={handleSubmit}>
             <h1>Other stuff</h1>
@@ -98,7 +94,7 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
                             /> : null}
             </label>
 
-            <button onClick={handleBack}>Back</button>
+            <button onClick={previousStep}>Back</button>
             <button type="submit" >Submit</button>
         </form>
     )
