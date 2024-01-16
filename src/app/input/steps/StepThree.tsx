@@ -35,10 +35,6 @@ export default function StepThree({
     }
   };
 
-  const handleBack = () => {
-    previousStep();
-  };
-
   return (
     <form className="form-inputs" ref={formRef} onSubmit={handleSubmit}>
       <div className="att-form">
@@ -144,7 +140,7 @@ export default function StepThree({
           </div>
         </div>
       </div>
-      <button onClick={handleBack}>Back</button>
+      <button onClick={previousStep}>Back</button>
       <button
         type="submit"
         name="continue"
@@ -159,7 +155,6 @@ export default function StepThree({
       >
         Add Another
       </button>
-      <button onClick={handleBack} />
     </form>
   );
 }

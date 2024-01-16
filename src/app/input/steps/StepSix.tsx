@@ -45,11 +45,6 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
         console.error("e is not a form element, why?");
       }
       };
-      
-  const handleBack =()=> {
-    previousStep();
-  }
-
 
   return (
     <form className="form-inputs"  ref={formRef} onSubmit={handleSubmit}>
@@ -73,7 +68,7 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
         </textarea>
 
       </div>
-      <button onClick={handleBack}>Back</button>
+      <button onClick={previousStep}>Back</button>
       <button 
       type="submit" 
       name="continue"
