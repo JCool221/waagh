@@ -4,7 +4,16 @@
     "name": "khorne berzerkers",
     "attributes": [
       {
-        "model": "",
+        "model": "khorne berzerker champion",
+        "m": "6",
+        "t": "4",
+        "sv": "3",
+        "w": "2",
+        "ld": "6",
+        "oc": "2"
+      },
+      {
+        "model": "khorne berzerker",
         "m": "6",
         "t": "4",
         "sv": "3",

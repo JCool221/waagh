@@ -1,5 +1,5 @@
 "use client";
-
+// todo:refactor this garbage component
 import "../input.css";
 import { FormEvent } from "react";
 import { useState, useRef } from "react";

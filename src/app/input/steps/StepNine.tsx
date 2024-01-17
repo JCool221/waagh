@@ -3,8 +3,6 @@
 import "../input.css";
 import { FormEvent, useState } from "react";
 import { Props } from "@/lib/types/props";
-// import data for build purposes
-// import unitData from "@/lib/teststuff/testdata.json"
 
 export default function StepNine({
   nextStep,
@@ -18,6 +16,7 @@ export default function StepNine({
     setUnitData({
       ...unitData,
       ...Object.fromEntries(new FormData(e.target as HTMLFormElement))})
+      nextStep();
   }
 
     return(
