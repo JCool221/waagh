@@ -14,6 +14,7 @@ export default function StepTen({
   const [wargear, setWargear] = useState(false)
   const [wargearName, setWargearName] = useState('')
   const [wargearEffect, setWargearEffect] = useState('')
+  const [wargearQuantity, setWargearQuantity] = useState('')
   const [modalData, setModalData] = useState<any|null>([])
   const [wargearData, setWargearData] = useState()
 
@@ -31,7 +32,8 @@ export default function StepTen({
   useEffect(()=>{console.log(wargearData)},[wargearData])
 
   const addAnother = () => {
-    const itemData = [{[wargearName]: wargearEffect}]
+    const itemData = [{[wargearName]: wargearEffect},
+                      {[wargearName]: parseInt(wargearQuantity)}]
     setModalData([...modalData, ...itemData])
   }
 
@@ -39,6 +41,7 @@ export default function StepTen({
     console.log(modalData)
     setWargearName('')
     setWargearEffect('')
+    setWargearQuantity('')
   },[modalData])
 
     return(
@@ -128,6 +131,14 @@ export default function StepTen({
                   value={wargearEffect}
                   onChange={(e)=> setWargearEffect(e.target.value)}
                   />
+                  <p>can have</p>
+                  <input 
+                  className="selection-input"
+                  type="text" 
+                  name="quantity"
+                  value={wargearQuantity}
+                  onChange={(e)=> setWargearQuantity(e.target.value)}
+                  />
                   <button
                   className="modal-button"
                   type="button"
@@ -139,12 +150,14 @@ export default function StepTen({
                   type="button"
                   onClick={()=> {addAnother(), setWargear(!wargear)}}
                   >
-                    done</button>
+                    done
+                    </button>
                 <button 
                 className="modal-button"
                 type="button"
                 onClick={()=>setWargear(!wargear)}
-                >close</button>
+                >close
+                </button>
                 </div>
               </div>
             )}
