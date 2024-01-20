@@ -25,6 +25,7 @@ export default function StepNine({
           <input 
           type="text" 
           name="minSize"
+          autoFocus
           size={1}
           className="checkbox-numeral"
           />

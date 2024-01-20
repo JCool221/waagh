@@ -5,7 +5,6 @@ export default function Home() {
   return (
     <main>
         <div className="form-container">
-<StepTen />
           {/* Lets Go! */}
         </div>
     </main>

@@ -30,6 +30,7 @@ export default function StepTwo({
         autoComplete="off"
         className="form-name"
         placeholder="enter name"
+        autoFocus
         required
       />
       <button onClick={previousStep}>Back</button>
