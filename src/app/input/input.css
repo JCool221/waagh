@@ -171,9 +171,12 @@ textarea {
     margin: auto;
 }
 
+.selection-select{
+    width: 5rem;
+}
 .selection-override{
     display: flex;
-    flex-direction: column;
+    flex-direction: row ;
     margin: 1rem 0;
 }
 .selection-input{
@@ -183,5 +186,6 @@ textarea {
     padding: 5px;
     text-align: center;
     width: 2rem;
+    height: 1.5em;
     margin: 0 1rem;
 }
