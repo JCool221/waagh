@@ -3,12 +3,11 @@
 import "../input.css";
 import { FormEvent, useState, useEffect } from "react";
 import { Props } from "@/lib/types/props";
-import unitData from "@/lib/teststuff/testdata.json"
 
 export default function StepTen({
   nextStep,
   previousStep,
-  // unitData,
+  unitData,
   setUnitData,
 }: Props) {
   const [wargear, setWargear] = useState(false)
@@ -21,15 +20,13 @@ export default function StepTen({
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log(Object.fromEntries(new FormData(e.target as HTMLFormElement)))
-    setWargearData({
+    setUnitData({
+      ...unitData,
       ...Object.fromEntries(new FormData(e.target as HTMLFormElement)),
       ...modalData
     })
-    console.log(wargearData)
-    // nextStep()
+    nextStep()
   }
-
-  useEffect(()=>{console.log(wargearData)},[wargearData])
 
   const addAnother = () => {
     const itemData = [{[wargearName]: wargearEffect},
@@ -38,7 +35,6 @@ export default function StepTen({
   }
 
   useEffect(()=>{
-    console.log(modalData)
     setWargearName('')
     setWargearEffect('')
     setWargearQuantity('')
@@ -55,6 +51,7 @@ export default function StepTen({
         <p>ranged</p>
           <select 
           name={`ranged.${item.model}`}
+          autoFocus
           id={`ranged.${item.model}`}
           autoComplete="off"
           >

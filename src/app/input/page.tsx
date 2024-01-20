@@ -22,6 +22,7 @@ export default function Input() {
 
   const nextStep = () => {
     setStep(step + 1)
+    console.log(step)
   }
 
   const previousStep = () => {

@@ -47,6 +47,7 @@ export default function StepOne({ nextStep, unitData, setUnitData }: Props) {
         name="topLevelFaction"
         id="faction"
         autoComplete="off"
+        autoFocus
         required
         value={selectedTopLevelFaction}
         onChange={handleTopLevelFactionChange}

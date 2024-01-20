@@ -57,6 +57,7 @@ export default function StepSix({ nextStep, previousStep, unitData, setUnitData 
           className="ability-name"
           autoComplete="off"          
           placeholder="ability name"
+          autoFocus
         />
         <textarea 
         name="ability-text" 

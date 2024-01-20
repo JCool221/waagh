@@ -173,6 +173,7 @@ textarea {
 
 .selection-override{
     display: flex;
+    flex-direction: column;
     margin: 1rem 0;
 }
 .selection-input{

@@ -60,6 +60,7 @@ export default function StepThree({
               pattern="[0-9]*"
               className="att-values"
               autoComplete="off"
+              autoFocus
               required
             />
           </div>

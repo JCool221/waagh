@@ -26,6 +26,7 @@ export default function StepSeven({ nextStep, previousStep, unitData, setUnitDat
                 className="checkbox"
                 name="invuln"
                 type="checkbox"
+                autoFocus
                 checked={invuln}
                 onChange={()=> setInvuln(!invuln)}
                 />

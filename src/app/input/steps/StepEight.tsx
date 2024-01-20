@@ -21,9 +21,11 @@ export default function StepEight({
   }
 
   useEffect(()=>{
-    const formData={keywords: keywords}
-    setUnitData({...unitData, ...formData})
-    nextStep();
+    if(keywords.length>0){
+      const formData={keywords: keywords}
+      setUnitData({...unitData, ...formData})
+      nextStep();
+    }
   },[keywords])
 
   return (
@@ -33,6 +35,7 @@ export default function StepEight({
       className="keyword-area" 
       value={keywordString}
       name="keywords" 
+      autoFocus
       cols={30} 
       rows={10} 
       placeholder="Enter keywords seperated by a comma or new line"

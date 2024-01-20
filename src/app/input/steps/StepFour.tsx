@@ -64,6 +64,7 @@ export default function StepFour({
           className="weapon-name"
           autoComplete="off"
           placeholder="weapon name"
+          autoFocus
         />
 
         <div className="attributes">
